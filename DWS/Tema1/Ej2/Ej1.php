@@ -38,17 +38,15 @@
 
                 if ($cantidad > 0) {
                     $subtotal = $precio * $cantidad;
-                }
-                $total += $subtotal;
+                    $total += $subtotal;
 
-                //Mostramos la fila de los productos de los que se ha comprado alguna unidad
-                if ($cantidad > 0) {
-                    echo "<tr>";
-                    echo "<td>$cantidad</td>";
-                    echo "<td>$producto</td>";
-                    echo "<td>" . number_format($precio, 2, ',') . " €</td>";
-                    echo "<td>" . number_format($subtotal, 2, ',') . " €</td>";
-                    echo "</tr>";
+
+                    echo "<tr>
+                    <td>$cantidad</td>
+                    <td>$producto</td>
+                    <td>{$precio} €</td>
+                    <td>{$subtotal} €</td>
+                    </tr>";
                 }
 
                 $indice++;
@@ -59,15 +57,16 @@
             $iva = round($total * 21 / 121, 2);
 
             // Mostramos el total 
-            echo "<tr>";
-            echo "<th colspan='3'>Total</th>";
-            echo "<th>" . number_format($total, 2, ',') . " €</th>";
-            echo "</tr>";
+            echo "<tr>
+            <td colspan='3'>Total</td>
+            <td>{$total} €</td>
+            </tr>";
+
             // Mostramos el IVA incluido 
-            echo "<tr>";
-            echo "<th colspan='3'>IVA incluido (21 %)</th>";
-            echo "<th>" . number_format($iva, 2, ',') . " €</th>";
-            echo "</tr>";
+            echo "<tr>
+            <td colspan='3'>IVA incluido (21 %)</td>
+            <td>{$iva} €</td>
+            </tr>";
 
             // TODO 1: recorre los productos y enlaza cada precio con su cantidad.
             // TODO 2: calcula el subtotal de cada producto y acumula el total.
