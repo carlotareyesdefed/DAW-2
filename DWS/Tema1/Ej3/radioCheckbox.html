@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Datos personales</title>
+</head>
+
+<body>
+    <h1>Datos personales</h1>
+    <form action="porcesarDatos.php" method="POST">
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" name="nombre" maxlength="20" required>
+        <br>
+        <label for="apellidos">Apellidos</label>
+        <input type="text" id="apellidos" name="apellidos" maxlength="20" required>
+
+        <!-- TODO: crea un select name="edad" con los cuatro intervalos del enunciado. -->
+        <select name="edad" id="name">
+            <option value="Menos de 20 años">Menos de 20 años</option>
+            <option value="Entre 20 y 39 años">Entre 20 y 39 años</option>
+            <option value="Entre 40 y 59 años">Entre 40 y 59 años</option>
+            <option value="60 años o más">60 años o más</option>
+        </select>
+
+        <!-- TODO: crea el campo numérico name="peso" que admita decimales. -->
+        <label for="peso">Peso</label>
+        <input type="number" step="0.01" id="peso" name="peso" min="20" max="500" />
+
+        <!-- TODO: crea los radios name="sexo" (masculino/femenino). -->
+        <input type="radio" id="femenino" name="sexo" value="femenino">
+        <label for="femenino">Femenino</label>
+        <input type="radio" id="masculino" name="sexo" value="masculino">
+        <label for="masculino">Masculino</label>
+
+        <!-- TODO: crea los radios name="estado-civil" (soltero/casado/otro). -->
+        <input type="radio" id="soltero" name="estado-civil" value="soltero">
+        <label for="soltero">Soltero/label>
+            <input type="radio" id="casado" name="estado-civil" value="casado">
+            <label for="casado">Casado</label>
+            <input type="radio" id="otro" name="estado-civil" value="otro">
+            <label for="otro">Otro</label>
+
+            <!-- TODO: crea los checkboxes name="aficiones[]" con los valores pedidos. -->
+            <input type="checkbox" id="aficiones" name="aficiones" checked />
+            <label for="aficiones">Cine</label>
+            <input type="checkbox" id="aficiones" name="aficiones" checked />
+            <label for="aficiones">Literatura</label>
+            <input type="checkbox" id="aficiones" name="aficiones" checked />
+            <label for="aficiones">Tebeos</label>
+            <input type="checkbox" id="aficiones" name="aficiones" checked />
+            <label for="aficiones">Deporte</label>
+            <input type="checkbox" id="aficiones" name="aficiones" checked />
+            <label for="aficiones">Musica</label>
+            <input type="checkbox" id="aficiones" name="aficiones" checked />
+            <label for="aficiones">Television</label>
+
+            <!-- TODO: añade los botones Enviar y Borrar. -->
+            <input type="submit" value="Enviar">
+            <input type="reset" value="Borrar">
+    </form>
+</body>
+
+</html>
