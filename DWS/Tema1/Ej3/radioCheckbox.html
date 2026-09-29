@@ -8,76 +8,79 @@
 
 <body>
 
-    <h1>Datos personales</h1>
+
 
     <form action="procesarDatos.php" method="POST">
 
-        <label for="nombre">Nombre</label>
-        <input type="text" id="nombre" name="nombre" maxlength="20" required>
-        <br><br>
+        <fieldset>
+            <legend><b>Datos personales</b></legend>
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" maxlength="20" required>
+            <br><br>
 
-        <label for="apellidos">Apellidos</label>
-        <input type="text" id="apellidos" name="apellidos" maxlength="20" required>
-        <br><br>
+            <label for="apellidos">Apellidos</label>
+            <input type="text" id="apellidos" name="apellidos" maxlength="20" required>
+            <br><br>
 
-        <label for="edad">Edad</label>
-        <select name="edad" id="edad" required>
-            <option value="Menos de 20 años">Menos de 20 años</option>
-            <option value="Entre 20 y 39 años">Entre 20 y 39 años</option>
-            <option value="Entre 40 y 59 años">Entre 40 y 59 años</option>
-            <option value="60 años o más">60 años o más</option>
-        </select>
-        <br><br>
+            <label for="edad">Edad</label>
+            <select name="edad" id="edad" required>
+                <option selected disabled>Selecciona tu edad</option>
+                <option value="Menos de 20 años">Menos de 20 años</option>
+                <option value="Entre 20 y 39 años">Entre 20 y 39 años</option>
+                <option value="Entre 40 y 59 años">Entre 40 y 59 años</option>
+                <option value="60 años o más">60 años o más</option>
+            </select>
+            <br><br>
 
-        <label for="peso">Peso</label>
-        <input type="number" step="0.01" id="peso" name="peso" min="20" max="500" required>
-        <br><br>
+            <label for="peso">Peso</label>
+            <input type="number" step="0.01" id="peso" name="peso" min="20" max="500" required>
+            <br><br>
 
-        <label>Sexo</label>
-        <input type="radio" id="femenino" name="sexo" value="femenino" required>
-        <label for="femenino">Femenino</label>
+            <label>Sexo</label>
+            <input type="radio" id="femenino" name="sexo" value="femenino" required>
+            <label for="femenino">Femenino</label>
 
-        <input type="radio" id="masculino" name="sexo" value="masculino">
-        <label for="masculino">Masculino</label>
-        <br><br>
+            <input type="radio" id="masculino" name="sexo" value="masculino">
+            <label for="masculino">Masculino</label>
+            <br><br>
 
-        <label>Estado civil</label>
-        <input type="radio" id="soltero" name="estado-civil" value="soltero" required>
-        <label for="soltero">Soltero</label>
+            <label>Estado civil</label>
+            <input type="radio" id="soltero" name="estado-civil" value="soltero" required>
+            <label for="soltero">Soltero</label>
 
-        <input type="radio" id="casado" name="estado-civil" value="casado">
-        <label for="casado">Casado</label>
+            <input type="radio" id="casado" name="estado-civil" value="casado">
+            <label for="casado">Casado</label>
 
-        <input type="radio" id="otro" name="estado-civil" value="otro">
-        <label for="otro">Otro</label>
-        <br><br>
+            <input type="radio" id="otro" name="estado-civil" value="otro">
+            <label for="otro">Otro</label>
+            <br><br>
 
-        <label>Aficiones</label>
-        <br>
+            <label>Aficiones</label>
+            <br>
 
-        <input type="checkbox" id="cine" name="aficiones[]" value="cine">
-        <label for="cine">Cine</label>
+            <input type="checkbox" id="cine" name="aficiones[]" value="cine">
+            <label for="cine">Cine</label>
 
-        <input type="checkbox" id="literatura" name="aficiones[]" value="literatura">
-        <label for="literatura">Literatura</label>
+            <input type="checkbox" id="literatura" name="aficiones[]" value="literatura">
+            <label for="literatura">Literatura</label>
 
-        <input type="checkbox" id="tebeos" name="aficiones[]" value="tebeos">
-        <label for="tebeos">Tebeos</label>
+            <input type="checkbox" id="tebeos" name="aficiones[]" value="tebeos">
+            <label for="tebeos">Tebeos</label>
 
-        <input type="checkbox" id="deporte" name="aficiones[]" value="deporte">
-        <label for="deporte">Deporte</label>
+            <input type="checkbox" id="deporte" name="aficiones[]" value="deporte">
+            <label for="deporte">Deporte</label>
 
-        <input type="checkbox" id="musica" name="aficiones[]" value="musica">
-        <label for="musica">Música</label>
+            <input type="checkbox" id="musica" name="aficiones[]" value="musica">
+            <label for="musica">Música</label>
 
-        <input type="checkbox" id="television" name="aficiones[]" value="television">
-        <label for="television">Televisión</label>
+            <input type="checkbox" id="television" name="aficiones[]" value="television">
+            <label for="television">Televisión</label>
 
-        <br><br>
+            <br><br>
 
-        <input type="submit" value="Enviar">
-        <input type="reset" value="Borrar">
-
+            <input type="submit" value="Enviar">
+            <input type="reset" value="Borrar">
+        </fieldset>
     </form>
 
 </body>
