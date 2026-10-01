@@ -438,7 +438,7 @@
     }
 
     /* la cabecera de la tarjeta de datos (class="cabecera-panel") */
-   .cabecera-panel {
+    .cabecera-panel {
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -448,7 +448,7 @@
     }
 
     /* la etiqueta que indica estado IA activa / modo piloto (class="etiqueta-estado") */
-    .etiqueta-estado{
+    .etiqueta-estado {
       font-size: 0.75rem;
       padding: 0.18rem 0.75rem;
       border-radius: 999px;
@@ -522,7 +522,7 @@
     }
 
     /* la parte rellena de la barra con class="relleno-barra" */
-    .relleno-barra{
+    .relleno-barra {
       position: absolute;
       inset: 0;
       width: 82%;
@@ -543,17 +543,17 @@
     }
 
     /* el texto en negrita dentro de la tarjeta de reseña */
-    RELLENA_AQUI {
+    .tarjeta-resena strong {
       color: #facc15;
     }
 
     /* el encabezado común de sección con class="cabecera-seccion" */
-    RELLENA_AQUI {
+    .cabecera-seccion {
       margin-bottom: 2.3rem;
     }
 
     /* el título de sección con class="titulo-seccion" */
-    RELLENA_AQUI {
+    .titulo-seccion {
       font-size: 1.7rem;
       font-weight: 700;
       letter-spacing: -0.03em;
@@ -561,14 +561,14 @@
     }
 
     /* el texto introductorio de sección con class="texto-intro-seccion" */
-    RELLENA_AQUI {
+    .texto-intro-seccion {
       max-width: 36rem;
       color: var(--color-texto-suave);
       font-size: 0.95rem;
     }
 
     /* la sección de servicios con class="seccion-servicios" */
-    RELLENA_AQUI {
+    .seccion-servicios {
       background:
         radial-gradient(circle at 0 0, rgba(56, 189, 248, 0.16), transparent 55%),
         radial-gradient(circle at 100% 100%, rgba(234, 179, 8, 0.16), transparent 60%),
@@ -578,14 +578,14 @@
     }
 
     /* el grid de servicios con class="rejilla-servicios" */
-    RELLENA_AQUI {
+    .rejilla-servicios {
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: 1.3rem;
     }
 
     /* cada tarjeta de servicio con class="tarjeta-servicio" */
-    RELLENA_AQUI {
+    .tarjeta-servicio {
       border-radius: 1.2rem;
       background: rgba(15, 23, 42, 0.98);
       border: 1px solid var(--color-borde-suave);
@@ -604,7 +604,7 @@
     }
 
     /* el ::before de cada tarjeta de servicio (brillo al hover) */
-    RELLENA_AQUI {
+    .tarjeta-servicio:hover::before {
       content: "";
       position: absolute;
       inset: 0;
@@ -615,24 +615,24 @@
     }
 
     /* el icono grande de cada servicio con class="icono-servicio" */
-    RELLENA_AQUI {
+    .icono-servicio {
       font-size: 1.5rem;
       margin-bottom: 0.25rem;
     }
 
     /* el título de servicio con class="titulo-servicio" */
-    RELLENA_AQUI {
+    .titulo-servicio {
       font-weight: 600;
       font-size: 0.98rem;
     }
 
     /* el texto de descripción de servicio con class="descripcion-servicio" */
-    RELLENA_AQUI {
+    .descripcion-servicio {
       color: var(--color-texto-suave);
     }
 
     /* la parte inferior de la tarjeta de servicio con class="pie-servicio" */
-    RELLENA_AQUI {
+    .pie-servicio {
       margin-top: auto;
       padding-top: 0.6rem;
       border-top: 1px dashed rgba(75, 85, 99, 0.9);
@@ -641,7 +641,7 @@
     }
 
     /* las tarjetas de servicio al pasar el ratón por encima */
-    RELLENA_AQUI {
+    .tarjeta-servicio:hover {
       transform: translateY(-4px);
       background: #020617;
       box-shadow: 0 22px 55px rgba(15, 23, 42, 0.95);
@@ -649,12 +649,12 @@
     }
 
     /* el ::before de las tarjetas de servicio cuando están en hover */
-    RELLENA_AQUI {
+    .tarjeta-servicio:hover::before {
       opacity: 1;
     }
 
     /* la etiqueta verde de IA con class="etiqueta-ia" */
-    RELLENA_AQUI {
+    .etiqueta-ia {
       display: inline-flex;
       align-items: center;
       gap: 0.25rem;
@@ -667,19 +667,19 @@
     }
 
     /* todos los párrafos y también el elemento con id="resumen-destacado" */
-    RELLENA_AQUI {
+    p #resumen-destacado {
       line-height: 1.7;
     }
 
     /* la sección de IA con class="seccion-ia" */
-    RELLENA_AQUI {
+    .seccion-ia {
       background:
         radial-gradient(circle at 0 0, rgba(99, 102, 241, 0.2), transparent 60%),
         var(--color-fondo);
     }
 
     /* el grid de IA con class="fila-ia" */
-    RELLENA_AQUI {
+    .fila-ia {
       display: grid;
       grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
       gap: 2.7rem;
@@ -687,19 +687,19 @@
     }
 
     /* todos los párrafos dentro de la sección de IA */
-    RELLENA_AQUI {
+    .seccion-ia p {
       max-width: 38rem;
     }
 
     /* la lista de puntos de IA con class="lista-ia" */
-    RELLENA_AQUI {
+    .lista-ia {
       display: grid;
       gap: 1rem;
       margin-top: 1.6rem;
     }
 
     /* cada elemento de esa lista con class="item-ia" */
-    RELLENA_AQUI {
+    .item-ia {
       display: flex;
       gap: 0.6rem;
       padding: 0.78rem 0.95rem;
@@ -710,7 +710,7 @@
     }
 
     /* el punto luminoso de cada item de IA con class="punto-ia" */
-    RELLENA_AQUI {
+    .punto-ia {
       width: 8px;
       height: 8px;
       border-radius: 999px;
@@ -721,27 +721,27 @@
     }
 
     /* el texto final de la sección IA con class="nota-ia" */
-    RELLENA_AQUI {
+    .nota-ia {
       margin-top: 1.1rem;
       font-size: 0.85rem;
       color: var(--color-texto-suave);
     }
 
     /* la sección de proyectos con class="seccion-proyectos" */
-    RELLENA_AQUI {
+    .seccion-proyectos {
       background: radial-gradient(circle at 100% 0, rgba(236, 72, 153, 0.15), transparent 55%),
         #020617;
     }
 
     /* el grid de proyectos con class="lista-proyectos" */
-    RELLENA_AQUI {
+    .lista-proyectos {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 1.3rem;
     }
 
     /* cada tarjeta de proyecto con class="item-proyecto" */
-    RELLENA_AQUI {
+    .item-proyecto {
       border-radius: 1.2rem;
       background: rgba(15, 23, 42, 0.98);
       border: 1px solid var(--color-borde-suave);
@@ -757,7 +757,7 @@
     }
 
     /* la franja superior de cada proyecto con class="cabecera-proyecto" */
-    RELLENA_AQUI {
+    .cabecera-proyecto {
       height: 92px;
       background:
         radial-gradient(circle at 0 0, rgba(94, 234, 212, 0.35), transparent 60%),
@@ -766,7 +766,7 @@
     }
 
     /* el contenido de texto de cada proyecto con class="contenido-proyecto" */
-    RELLENA_AQUI {
+    .contenido-proyecto {
       padding: 0.95rem 1.05rem 1.05rem;
       display: flex;
       flex-direction: column;
@@ -774,26 +774,26 @@
     }
 
     /* el título de cada proyecto con class="titulo-proyecto" */
-    RELLENA_AQUI {
+    .titulo-proyecto {
       font-weight: 600;
       font-size: 0.98rem;
     }
 
     /* la etiqueta descriptiva del proyecto con class="etiqueta-proyecto" */
-    RELLENA_AQUI {
+    .etiqueta-proyecto {
       font-size: 0.8rem;
       color: var(--color-texto-suave);
     }
 
     /* el dato de resultado del proyecto con class="dato-proyecto" */
-    RELLENA_AQUI {
+    .dato-proyecto {
       margin-top: 0.35rem;
       color: var(--color-acento);
       font-size: 0.85rem;
     }
 
     /* cada item de proyecto cuando está en hover */
-    RELLENA_AQUI {
+    .item-proyecto:hover {
       transform: translateY(-4px);
       box-shadow: 0 24px 55px rgba(15, 23, 42, 0.95);
       border-color: rgba(129, 140, 248, 0.95);
@@ -801,7 +801,7 @@
     }
 
     /* cualquier .item-proyecto que venga inmediatamente después de otro .item-proyecto */
-    RELLENA_AQUI {
+    .item-proyecto+.item-proyecto {
       border-style: solid;
     }
 
