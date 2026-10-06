@@ -653,7 +653,7 @@
       opacity: 1;
     }
 
-    /* la etiqueta verde de IA con class="etiqueta-ia" */
+    /* la etiqueta versde de IA con class="etiqueta-ia" */
     .etiqueta-ia {
       display: inline-flex;
       align-items: center;
@@ -667,7 +667,8 @@
     }
 
     /* todos los párrafos y también el elemento con id="resumen-destacado" */
-    p #resumen-destacado {
+    p,
+    #resumen-destacado {
       line-height: 1.7;
     }
 
@@ -687,7 +688,7 @@
     }
 
     /* todos los párrafos dentro de la sección de IA */
-    .seccion-ia p {
+    p {
       max-width: 38rem;
     }
 
@@ -806,19 +807,19 @@
     }
 
     /* elementos con class="porcentaje" a los que se les añade el símbolo % en ::after */
-    RELLENA_AQUI {
+    .porcentaje::after {
       content: "%";
       margin-left: 0.1rem;
     }
 
     /* la sección de contacto con class="seccion-contacto" */
-    RELLENA_AQUI {
+    .seccion-contacto {
       background: #020617;
       border-top: 1px solid rgba(31, 41, 55, 0.9);
     }
 
     /* el bloque de contacto con id="bloque-contacto" */
-    RELLENA_AQUI {
+    #bloque-contacto {
       border-radius: 1.6rem;
       border: 1px solid rgba(55, 65, 81, 0.95);
       background:
@@ -833,13 +834,13 @@
     }
 
     /* el formulario de contacto con class="formulario-contacto" */
-    RELLENA_AQUI {
+    .formulario-contacto {
       display: grid;
       gap: 0.9rem;
     }
 
     /* cada campo del formulario con class="campo-formulario" */
-    RELLENA_AQUI {
+    .campo-formulario {
       display: flex;
       flex-direction: column;
       gap: 0.28rem;
@@ -847,12 +848,14 @@
     }
 
     /* todas las etiquetas de formulario <label> */
-    RELLENA_AQUI {
+    form label {
       color: var(--color-texto-suave);
     }
 
     /* todos los input, select y textarea del formulario */
-    RELLENA_AQUI {
+    input,
+    select,
+    textarea {
       border-radius: 0.85rem;
       border: 1px solid rgba(55, 65, 81, 1);
       background: rgba(15, 23, 42, 0.97);
@@ -869,12 +872,14 @@
     }
 
     /* los textarea del formulario (para que sean más altos) */
-    RELLENA_AQUI {
+    #mensaje {
       min-height: 120px;
     }
 
     /* input, select y textarea cuando tienen enfoque (focus) */
-    RELLENA_AQUI {
+    input:focus,
+    select:focus,
+    textarea:focus {
       border-color: rgba(129, 140, 248, 1);
       box-shadow:
         0 0 0 1px rgba(129, 140, 248, 0.9),
@@ -883,19 +888,19 @@
     }
 
     /* textos de ayuda pequeños bajo los campos con class="texto-ayuda" */
-    RELLENA_AQUI {
+    .texto-ayuda {
       font-size: 0.75rem;
       color: var(--color-texto-suave);
     }
 
     /* el bloque lateral de info de contacto con class="info-contacto" */
-    RELLENA_AQUI {
+    .info-contacto {
       font-size: 0.86rem;
       color: var(--color-texto-suave);
     }
 
     /* la lista de datos de contacto con class="lista-contacto" */
-    RELLENA_AQUI {
+    .lista-contacto {
       list-style: none;
       margin-top: 0.95rem;
       display: grid;
@@ -904,18 +909,18 @@
     }
 
     /* cada li dentro de .lista-contacto */
-    RELLENA_AQUI {
+    .lista-contacto li {
       display: flex;
       justify-content: space-between;
     }
 
     /* el último span dentro de cada li de .lista-contacto (valor principal) */
-    RELLENA_AQUI {
+    .lista-contacto li span:last-of-type {
       color: var(--color-texto);
     }
 
     /* el pie de página con class="pie" */
-    RELLENA_AQUI {
+    .pie {
       border-top: 1px solid rgba(31, 41, 55, 0.9);
       padding: 1.7rem 0 2rem;
       font-size: 0.8rem;
@@ -924,7 +929,7 @@
     }
 
     /* la fila interior del pie de página con class="fila-pie" */
-    RELLENA_AQUI {
+    .fila-pie {
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -933,25 +938,25 @@
     }
 
     /* la lista de enlaces del pie de página con class="menu-pie" */
-    RELLENA_AQUI {
+    .menu-pie {
       display: flex;
       gap: 1.2rem;
       flex-wrap: wrap;
     }
 
     /* los enlaces dentro de .menu-pie cuando están en hover */
-    RELLENA_AQUI {
+    .menu-pie:hover {
       color: var(--color-texto);
     }
 
     /* el estilo del texto seleccionado por el usuario (cualquier parte de la página) */
-    RELLENA_AQUI {
+    ::selection {
       background: #a855f7;
       color: #f9fafb;
     }
 
     /* los li que son hijos directos de .menu-principal (elementos del menú) */
-    RELLENA_AQUI {}
+    .menu-principal>li {}
 
     /* ==== MEDIA QUERIES ==== */
 
@@ -959,22 +964,24 @@
     @media (max-width: 960px) {
 
       /* el .contenedor dentro de .seccion-inicio, la .fila-ia y el #bloque-contacto */
-      RELLENA_AQUI {
+      .seccion-inicio .contenedor,
+      .fila-ia,
+      #bloque-contacto {
         grid-template-columns: minmax(0, 1fr);
       }
 
       /* el bloque de contacto con id="bloque-contacto" en pantallas medianas */
-      RELLENA_AQUI {
+      #bloque-contacto {
         padding: 1.2rem 1.1rem;
       }
 
       /* el grid de servicios en pantallas medianas (2 columnas) */
-      RELLENA_AQUI {
+      .rejilla-servicios {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
       /* el grid de proyectos en pantallas medianas (2 columnas) */
-      RELLENA_AQUI {
+      .lista-proyectos {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
     }
@@ -983,22 +990,23 @@
     @media (max-width: 720px) {
 
       /* el nav que está dentro de .barra-navegacion (ocultamos menú en móvil) */
-      RELLENA_AQUI {
+      .barra-navegacion nav {
         display: none;
       }
 
       /* todas las secciones en móvil (menos padding vertical) */
-      RELLENA_AQUI {
+      section {
         padding: 3.6rem 0;
       }
 
       /* la rejilla de servicios y la lista de proyectos en móvil (1 columna) */
-      RELLENA_AQUI {
+      .rejilla-servicios,
+      .lista-proyectos {
         grid-template-columns: minmax(0, 1fr);
       }
 
       /* el .contenedor en la sección de inicio en móvil (menos separación) */
-      RELLENA_AQUI {
+      .seccion-inicio .contenedor {
         gap: 2.5rem;
       }
     }
