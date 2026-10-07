@@ -17,6 +17,12 @@
             flex-flow: wrap;
         }
 
+        div::before {
+            content: "+";
+            position: relative;
+            top: 100%;
+        }
+
         div {
             width: 200px;
             height: 200px;
@@ -30,6 +36,7 @@
             justify-content: center;
             align-items: center;
             text-shadow: 0 0 10px black;
+            overflow: hidden;
         }
 
         #c1 {
@@ -40,20 +47,50 @@
             background-position: 50% 0%;
         }
 
-        span {
-            opacity: 0;
+        #c1:hover::before {
+            top: 0%;
         }
 
-        span:hover {
-            opacity: 1;
+        div:nth-child(2) {
+            font-size: 1.5rem;
+
+            p {
+                position: relative;
+                top: 120%;
+            }
+        }
+
+        div:nth-child(2):hover {
+            p {
+                top: 0%;
+            }
+        }
+
+        div:nth-child(3):hover {
+            transform: scale(1.4);
+        }
+
+        div:nth-child(4):hover {
+            transform-origin: 0 0;
+            transform: rotate(120deg);
+        }
+
+        div:nth-child(5):hover {
+            transform: rotate(-40deg) scale(1.4) translateX(100px);
+        }
+
+        div:nth-child(1):hover {
+            filter: grayscale(100%);
         }
     </style>
 </head>
 
 <body>
 
-    <div id="c1"><span>+</span></div>
-    <div id="c2"></div>
+    <div id="c1"></div>
+    <div id="c2">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque numquam perspiciatis provident.</p>
+    </div>
     <div id="c3"></div>
     <div id="c4"></div>
     <div id="c5"></div>
