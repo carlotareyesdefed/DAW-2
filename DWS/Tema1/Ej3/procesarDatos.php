@@ -70,14 +70,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         echo "<p>El estado civil introducido no es válido</p>";
     }
 
+    echo "<ul>";
+
     foreach ($aficiones as $aficion) {
+
         if (
             !is_string($aficion) ||
             !in_array($aficion, $aficionesValidas, true)
         ) {
             exit('Se ha recibido una afición no válida.');
+        } else {
+            echo "<li>" . htmlspecialchars($aficion, ENT_QUOTES, "UTF-8") . "</li>";
         }
     }
+
+    echo "</ul>";
 }
 
 
