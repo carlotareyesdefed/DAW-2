@@ -2,12 +2,65 @@
 require_once __DIR__ . '/repositorioPreguntas.php';
 
 // EJERCICIO 07 - PARTE A: GENERACIÓN.
-// TODO 1: exige POST y valida asignatura y numeroDePreguntas (entre 1 y 5).
-// TODO 2: elige al azar preguntas distintas del repositorio de esa asignatura.
-// TODO 3: genera un formulario HTML POST dirigido a comprobarTest.php.
-// TODO 4: incluye identificadores de preguntas y opciones de respuesta
-//          (radios) para que el corrector pueda cotejar las respuestas.
-// TODO 5: incorpora información suficiente para conocer qué asignatura
-//          y qué preguntas se han mostrado, sin enviar al cliente las soluciones.
 
-echo 'Pendiente de implementar la generación del ejercicio 07.';
+if (($_SERVER['REQUEST_METHOD'] ?? '') !== 'POST') {
+    http_response_code(405);
+    exit('Envía el formulario mediante POST.');
+}
+
+$asignatura = (string) ($_POST['asignatura'] ?? '');
+$numeroDePreguntas = filter_var(
+    $_POST['numeroDePreguntas'] ?? null,
+    FILTER_VALIDATE_INT
+);
+
+if (
+    $asignatura == '' ||
+    $numeroDePreguntas === false ||
+    $numeroDePreguntas === null ||
+    $numeroDePreguntas < 1 ||
+    $numeroDePreguntas > 5
+) {
+    exit("Introduce una asignatura y un número de preguntas correcto.");
+}
+
+if (!array_key_exists($asignatura, $repositorioPreguntas)) {
+    exit("La asignatura seleccionada no existe.");
+}
+
+$preguntasAsignatura = $repositorioPreguntas[$asignatura];
+
+$preguntas = (array) array_rand($preguntasAsignatura, $numeroDePreguntas);
+
+echo "<form action='comprobarTest.php' method='POST'>";
+
+foreach ($preguntas as $pregunta) {
+
+    echo "<p>" . htmlspecialchars($pregunta, ENT_QUOTES, 'UTF-8') . "</p>";
+
+    $opciones = $preguntasAsignatura[$pregunta];
+
+    foreach ($opciones as $indice => $opcion) {
+
+        echo "<label>";
+
+        echo "<input type='radio'
+            name='respuestas[" . htmlspecialchars($pregunta, ENT_QUOTES, 'UTF-8') . "]'
+            value='" . htmlspecialchars((string) $indice, ENT_QUOTES, 'UTF-8') . "'
+            required>";
+
+        echo htmlspecialchars($opcion, ENT_QUOTES, 'UTF-8');
+
+        echo "</label><br>";
+    }
+
+    echo "<br>";
+}
+
+echo "<input type='hidden' name='asignatura' value='"
+    . htmlspecialchars($asignatura, ENT_QUOTES, 'UTF-8')
+    . "'>";
+
+echo "<button type='submit'>Comprobar respuestas</button>";
+
+echo "</form>";
