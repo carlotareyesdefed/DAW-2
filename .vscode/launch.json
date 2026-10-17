@@ -1,0 +1,21 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Xdebug — Mac",
+            "type": "php",
+            "request": "launch",
+            "hostname": "127.0.0.1",
+            "port": 9003,
+            "pathMappings": {
+                "/Users/carlotareyesdefederico/documents/GitHub/DAW-2": "${workspaceFolder}"
+            }
+        },
+        {
+            "name": "Xdebug — Windows clase",
+            "type": "php",
+            "request": "launch",
+            "port": 9003
+        }
+    ]
+}
