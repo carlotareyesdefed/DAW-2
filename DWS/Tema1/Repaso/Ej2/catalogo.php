@@ -17,3 +17,4 @@ $transportes = ['recogida'=>0, 'normal'=>12, 'urgente'=>28];
 $codigos = ['SIN_CODIGO'=>0, 'LOCAL2026'=>5, 'VOLUNTARIADO'=>10];
 $ivaPorcentaje = 21;
 $presupuestoMaximo = 500;
+
