@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Pedido electoral</title>
+</head>
+
+<body>
+    <h1>Pedido de material de campaña (simulación)</h1>
+    <form method="post" action="procesarPedido.php">
+        <label for="partido">Partido:</label>
+        <select id="partido" name="partido" required>
+            <option value="PSOE">PSOE</option>
+            <option value="PP">PP</option>
+            <option value="Vox">Vox</option>
+            <option value="Sumar">Sumar</option>
+            <option value="Podemos">Podemos</option>
+        </select>
+        <br><br>
+
+        <label>Pack:</label>
+        <input type="radio" id="basico" name="pack" value="basico" required>
+        <label for="basico">Basico</label>
+        <input type="radio" id="movil" name="pack" value="movil">
+        <label for="movil">Movil</label>
+        <input type="radio" id="completo" name="pack" value="completo">
+        <label for="completo">Completo</label>
+        <br><br>
+
+        <label for="unidades">Unidades:</label>
+        <input type="number" id="unidades" name="unidades" min="1" max="8" step="1" required>
+        <br><br>
+
+        <label>Extras:</label>
+        <input type="checkbox" id="chapas" name="extras[]" value="chapas">
+        <label for="chapas">Chapas</label>
+        <input type="checkbox" id="pegatinas" name="extras[]" value="pegatinas">
+        <label for="pegatinas">Pegatinas</label>
+        <input type="checkbox" id="lanyards" name="extras[]" value="lanyards">
+        <label for="lanyards">Lanyards</label>
+        <input type="checkbox" id="folletos" name="extras[]" value="folletos">
+        <label for="folletos">Folletos</label>
+        <br><br>
+
+        <label>Transporte:</label>
+        <input type="radio" id="recogida" name="transporte" value="recogida" required>
+        <label for="recogida">Recogida</label>
+        <input type="radio" id="normal" name="transporte" value="normal">
+        <label for="normal">Normal</label>
+        <input type="radio" id="urgente" name="transporte" value="urgente">
+        <label for="urgente">Urgente</label>
+        <br><br>
+
+        <label for="codigo">Código:</label>
+        <input type="text" id="codigo" name="codigo" pattern="LOCAL2026|VOLUNTARIADO"
+            placeholder="LOCAL2026 o VOLUNTARIADO">
+        <br><br>
+
+        <button type="submit">Calcular pedido</button>
+    </form>
+</body>
+
+</html>
