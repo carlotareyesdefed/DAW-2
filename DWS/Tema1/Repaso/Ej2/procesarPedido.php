@@ -3,14 +3,10 @@ require_once __DIR__ . '/catalogo.php';
 require_once __DIR__ . '/funciones.php';
 require_once __DIR__ . '/../../formulario.php';
 
-// TODO 1: aceptar solo POST y validar partido, pack, transporte, unidades (1..8).
-// TODO 2: recuperar extras[] (puede no existir), validar sus valores y eliminar duplicados.
-// TODO 3: calcular precio unitario = pack + suma de extras.
-// TODO 4: mercancía = precio unitario * unidades; aplicar código si es válido.
-// Un código inválido NO da descuento; el transporte NO se descuenta.
-// TODO 5: calcular base con transporte, IVA 21 % y total final.
-// TODO 6: indicar si total final supera 500 €, y preparar desglose en la vista.
-
+if (($_SERVER['REQUEST_METHOD'] ?? '') !== 'POST') {
+    http_response_code(405);
+    exit('Debes enviar el formulario mediante POST.');
+}
 
 $partido = trim((string) ($_POST['partido'] ?? ''));
 $pack = trim((string) ($_POST['pack'] ?? ''));
@@ -33,16 +29,16 @@ if (!is_array($extrasSeleccionados)) {
 }
 
 foreach ($extrasSeleccionados as $extra) {
-    if (!array_key_exists($extra, $extras)) {
+    if (!is_string($extra) || !array_key_exists($extra, $extras)) {
         exit('Los extras introducidos son incorrectos');
     }
 }
-
 // Eliminar duplicados
 $extrasSeleccionados = array_unique($extrasSeleccionados);
 
 // Calcular precio unitario = pack + suma de extras.
 $precioPack = $packs[$pack]['precio'];
+$sumaExtras = 0;
 
 foreach ($extrasSeleccionados as $extra) {
     $extra = $extras[$extra]['precio'];
@@ -54,24 +50,27 @@ $precioUnitario = $precioPack + $sumaExtras;
 //mercancía = precio unitario * unidades; aplicar código si es válido.
 $codigo = trim((string) ($_POST['codigo'] ?? ''));
 
-// Calcular el precio inicial
 $mercancia = $precioUnitario * $unidades;
 
+$descuento = 0;
+$mensajeCodigo = '';
+
 if ($codigo === '') {
-    $descuento = 'No se ha introducido ningún código de descuento.';
+    $mensajeCodigo = 'No se ha introducido ningún código.';
 } elseif (!array_key_exists($codigo, $codigos)) {
-    $descuento = 'El código introducido no es válido.';
+    $mensajeCodigo = 'El código introducido no es válido.';
 } else {
     $codigoDescuento = $codigos[$codigo];
     $descuento = $mercancia * ($codigoDescuento / 100);
-    $mercancia = $mercancia - $descuento;
 }
 
+$mercanciaDescontada = $mercancia - $descuento;
+
 // Sumo el transporte a la mercancía
-$precioBase = $mercancia + $transportes[$transporte];
+$precioBase = $mercanciaDescontada + $transportes[$transporte];
 
 // Calculo IVA: Precio sin IVA × 0,21
-$iva = $precioBase * 0.21;
+$iva = $precioBase * ($ivaPorcentaje / 100);
 
 // Precio total
 $precioTotal = $precioBase + $iva;
@@ -79,8 +78,10 @@ $precioTotal = $precioBase + $iva;
 //Mensaje si precio total supera los 500€
 $mensaje = '';
 
-if ($precioTotal > 500) {
-    $mensaje = '(El precio total supera los 500€)';
+if ($precioTotal > $presupuestoMaximo) {
+    $mensaje = 'El precio total supera los 500 €.';
+} else {
+    $mensaje = 'El precio total no supera los 500 €.';
 }
 
 // Cargamos la vista
