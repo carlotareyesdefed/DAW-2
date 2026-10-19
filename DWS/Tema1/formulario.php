@@ -60,3 +60,12 @@ function imprimirPie(): void
     echo '</body>';
     echo '</html>';
 }
+
+function escapar(string $texto): string
+{
+    return htmlspecialchars($texto, ENT_QUOTES, 'UTF-8');
+}
+
+function euros(float $numero): string {
+    return number_format($numero, 2, ',', '.') . ' €';
+}
