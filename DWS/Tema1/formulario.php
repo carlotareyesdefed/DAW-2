@@ -1,19 +1,34 @@
 <?php
 
-function validarEntero(string $campo, int $min, int $max): int|false
+function validarEntero(string $campo, int $min, ?int $max = null): int|false
 {
+    $opciones = ['min_range' => $min];
+
+    if ($max !== null) {
+        $opciones['max_range'] = $max;
+    }
+
     return filter_var(
         $_POST[$campo] ?? null,
         FILTER_VALIDATE_INT,
-        [
-            'options' => [
-                'min_range' => $min,
-                'max_range' => $max
-            ]
-        ]
+        ['options' => $opciones]
     );
 }
 
+function validarValorEntero($valor, int $min, ?int $max = null): int|false
+{
+    $opciones = ['min_range' => $min];
+
+    if ($max !== null) {
+        $opciones['max_range'] = $max;
+    }
+
+    return filter_var(
+        $valor,
+        FILTER_VALIDATE_INT,
+        ['options' => $opciones]
+    );
+}
 function validarDecimal(string $campo, float $min, float $max): float|false
 {
     $valor = filter_var(
