@@ -1,0 +1,126 @@
+:root {
+    --negro: black;
+    --blanco: white;
+    --morado: #4834d4;
+    --turquesa: #40E0D0;
+    --crimson: crimson;
+    --grisOscuro: #222;
+    --grisClaro: #666;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all .5s;
+}
+
+body,
+html {
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Roboto Slab', serif;
+}
+
+img {
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+header#header {
+    /* Modelo de caja: witdth, height, margin, padding, display*/
+    max-width: 80%;
+    padding: 50px 0;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+
+    nav.menu {
+        a {
+            /* Cuando atacamos textos: tamaño, color */
+            color: var(--negro);
+            text-transform: uppercase;
+            font-weight: bold;
+            margin-left: 20px;
+            padding: 0 10px;
+            margin: 0 5px;
+
+            &:last-child {
+                padding: 8px 30px;
+                border-radius: 20px;
+                color: var(--blanco);
+                background-color: var(--turquesa);
+
+                &:hover {
+                    background-color: var(--morado);
+                }
+            }
+
+        }
+    }
+
+}
+
+section#banner {
+    min-height: 50vh;
+    background: url(../img/fondo.jpg) no-repeat center center / cover;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    color: var(--blanco);
+
+
+    h1 {
+        font-size: 4rem;
+        text-transform: uppercase;
+    }
+
+    p {
+        font-size: 1.5rem;
+        max-width: 80%;
+    }
+
+    a {
+        text-decoration: none;
+        color: var(--blanco);
+        padding: 10px;
+        text-transform: uppercase;
+        border: solid 1px var(--blanco);
+        border-radius: 20px;
+        margin-top: 10px;
+        padding-inline: 30px;
+    }
+}
+
+main#home {
+
+    section#info {
+        text-align: center;
+        margin: 60px 50px;
+
+        img {
+            margin-bottom: 20px;
+        }
+
+        p {
+            margin: auto 100px;
+        }
+    }
+
+    section#servicios {
+        text-align: center;
+        background-color: var(--turquesa);
+    }
+}
