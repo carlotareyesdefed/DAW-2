@@ -6,8 +6,17 @@
 }
 
 body {
+    font-family: "Roboto", sans-serif;
     font-size: 15px;
-    font-family: 'Roboto', sans-serif;
+}
+
+h3::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 5px;
+    margin: 20px auto;
+    background: var(--turquesa);
 }
 
 nav.navbar {
@@ -19,7 +28,7 @@ header#header {
     background: var(--turquesa) url(../img/cabecera.png) no-repeat center 100%;
 
     nav a {
-        color: var(--blanco);
+        color: white;
         font-weight: bold;
         text-transform: uppercase;
 
@@ -28,25 +37,56 @@ header#header {
         }
     }
 
+
     .container+.container {
         text-align: center;
         color: var(--blanco);
         min-height: 80vh;
+        align-items: center;
         align-content: center;
 
         h1 {
+            font-family: "Roboto";
             font-size: 6rem;
-            font-weight: bold;
-            margin-top: 100px;
             text-transform: uppercase;
+            font-weight: 100;
+
         }
     }
+
+
+
 }
 
 main#home {
+
+    h3, h4 {
+        text-transform: uppercase;
+    }
+
     section#trabajos {
         min-height: 100vh;
         align-content: center;
         text-align: center;
+
+        img {
+            width: 100%;
+        }
+
+    }
+
+    section#soporte {
+        h3 {
+            text-align: center;
+        }
+
+        .row>div {
+            display: flex;
+            align-items: start;
+            gap: 20px;
+            padding: 30px;
+
+        }
+
     }
 }
