@@ -1,0 +1,52 @@
+:root {
+    --negro: black;
+    --blanco: white;
+    --gris: grey;
+    --turquesa: turquoise;
+}
+
+body {
+    font-size: 15px;
+    font-family: 'Roboto', sans-serif;
+}
+
+nav.navbar {
+    background-color: transparent;
+}
+
+header#header {
+    min-height: 100vh;
+    background: var(--turquesa) url(../img/cabecera.png) no-repeat center 100%;
+
+    nav a {
+        color: var(--blanco);
+        font-weight: bold;
+        text-transform: uppercase;
+
+        &:hover {
+            color: var(--negro);
+        }
+    }
+
+    .container+.container {
+        text-align: center;
+        color: var(--blanco);
+        min-height: 80vh;
+        align-content: center;
+
+        h1 {
+            font-size: 6rem;
+            font-weight: bold;
+            margin-top: 100px;
+            text-transform: uppercase;
+        }
+    }
+}
+
+main#home {
+    section#trabajos {
+        min-height: 100vh;
+        align-content: center;
+        text-align: center;
+    }
+}
