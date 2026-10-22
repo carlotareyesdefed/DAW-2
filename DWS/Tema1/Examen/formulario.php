@@ -147,23 +147,35 @@ function euros(float $numero): string
     return number_format($numero, 2, ',', '.') . ' €';
 }
 
-function calcularPrioridad($cantidad): string
+function calcularPrioridad(int $valor): string
 {
-    $prioridad = '';
-
-    if ($cantidad > 0 && $cantidad <= 2) {
-        $prioridad = 'Baja';
-
-    } elseif ($cantidad >= 3 && $cantidad <= 5) {
-        $prioridad = 'Media';
-
-    } else {
-        $prioridad = 'Alta';
+    if ($valor <= 2) {
+        return 'BAJA';
+    } elseif ($valor <= 5) {
+        return 'MEDIA';
     }
 
-    return $prioridad;
+    return 'ALTA';
 }
 
+//Valida que las claves de un array coincidan con las claves de otro array
+function validarClavesArray($claves, array $catalogo): bool
+{
+    if (!is_array($claves)) {
+        return false;
+    }
+
+    foreach ($claves as $clave) {
+        if (
+            !is_string($clave) ||
+            !array_key_exists($clave, $catalogo)
+        ) {
+            return false;
+        }
+    }
+
+    return true;
+}
 
 
 

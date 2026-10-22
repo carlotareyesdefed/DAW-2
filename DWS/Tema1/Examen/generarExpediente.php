@@ -46,9 +46,10 @@ $seleccionadas = elegirClavesAleatorias($pistas, $cantidadPistas);
         <input type="hidden" name="cantidad" value="<?= $cantidadPistas ?>">
 
         <?php foreach ($seleccionadas as $pista): ?>
+            <input type="hidden" name="pistas[]" value="<?= escapar($pista) ?>">
             <p><b><?= $pista ?>: </b> <?= $pistas[$pista]['descripcion'] ?></p>
-            <input type="radio" id="investigar_<?= escapar($pista) ?>" name="decisiones[<?= ($pista) ?>]" value="Investigar"
-                required>
+            <input type="radio" id="investigar_<?= escapar($pista) ?>" name="decisiones[<?= ($pista) ?>]"
+                value="Investigar">
 
             <label for="investigar_<?= escapar($pista) ?>">Investigar</label>
 
