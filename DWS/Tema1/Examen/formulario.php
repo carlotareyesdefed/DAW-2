@@ -178,4 +178,53 @@ function validarClavesArray($claves, array $catalogo): bool
 }
 
 
+// array_diff
+$clavesPistas = [
+    'gps',
+    'camara',
+    'rumor',
+    'testigo'
+];
 
+$decisiones = [
+    'gps' => 'Investigar',
+    'rumor' => 'Descartar'
+];
+
+$sinResponder = array_diff(
+    $clavesPistas,
+    array_keys($decisiones)
+);
+
+print_r($sinResponder);
+
+// Array
+// (
+//     [1] => camara
+//     [3] => testigo
+// )
+
+// array_diff_key
+
+$pistas = [
+    'gps' => ['fiable' => true],
+    'camara' => ['fiable' => true],
+    'rumor' => ['fiable' => false]
+];
+
+$decisiones = [
+    'gps' => 'Investigar',
+    'rumor' => 'Descartar'
+];
+
+$sinResponder = array_diff_key($pistas, $decisiones);
+
+print_r($sinResponder);
+
+// Array
+// (
+//     [camara] => Array
+//         (
+//             [fiable] => 1
+//         )
+// )

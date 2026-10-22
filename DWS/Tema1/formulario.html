@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de ejemplo</title>
+</head>
+
+<body>
+    <h1>Formulario de inscripción</h1>
+
+    <form action="procesar.php" method="POST">
+
+        <!-- TEXT -->
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" maxlength="30" required>
+
+        <br><br>
+
+        <!-- NUMBER -->
+        <label for="edad">Edad:</label>
+        <input type="number" id="edad" name="edad" min="0" max="120" step="1" required>
+
+        <br><br>
+
+        <!-- SELECT -->
+        <label for="ciudad">Ciudad:</label>
+        <select name="ciudad" id="ciudad" required>
+            <option value="" disabled selected>Selecciona una ciudad</option>
+            <option value="Granada">Granada</option>
+            <option value="Malaga">Málaga</option>
+            <option value="Sevilla">Sevilla</option>
+        </select>
+
+        <br><br>
+
+        <!-- RADIO -->
+        <p>Turno preferido:</p>
+
+        <input type="radio" id="manana" name="turno" value="Manana" required>
+        <label for="manana">Mañana</label>
+
+        <input type="radio" id="tarde" name="turno" value="Tarde">
+        <label for="tarde">Tarde</label>
+
+        <br><br>
+
+        <!-- CHECKBOX -->
+        <p>Aficiones:</p>
+
+        <input type="checkbox" id="deporte" name="aficiones[]" value="Deporte">
+        <label for="deporte">Deporte</label>
+
+        <input type="checkbox" id="musica" name="aficiones[]" value="Musica">
+        <label for="musica">Música</label>
+
+        <input type="checkbox" id="lectura" name="aficiones[]" value="Lectura">
+        <label for="lectura">Lectura</label>
+
+        <br><br>
+
+        <button type="submit">Enviar</button>
+
+    </form>
+</body>
+
+</html>
+
