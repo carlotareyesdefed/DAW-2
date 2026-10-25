@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Broker</title>
+    <title> Studio Broker</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -17,11 +17,9 @@
     <!-- Cabecera -->
     <header id="header">
         <!-- Logo -->
-        <div class="logo">
-            <a href="#">
-                <img src="img/logo.png" alt="logo">
-            </a>
-        </div>
+        <a class="logo" href="#">
+            <img src="img/logo.png" alt="logo">
+        </a>
 
         <!-- Menú -->
         <nav class="menu">
@@ -43,42 +41,60 @@
     <main id="home">
         <section id="info">
             <img src="img/icon1.png" alt="Bombilla">
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi amet adipisci, eveniet, sed, ducimus
-                deserunt voluptates qui vitae soluta dignissimos maiores modi. Ipsa at est excepturi, quaerat vel omnis
-                voluptatem.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod<br class="desktop-break">
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, uis nostrud<br
+                    class="desktop-break">
+                exercitation ullamco laboris nisi ut aliquip ex ea commodo</p>
         </section>
+
 
         <section id="servicios">
-            <h3>SERVICIOS</h3>
-            <div class="diseñoWeb">
-                <img src="img/icon2.png" alt="Icono">
-                <p>Diseño Web front-end</p>
-            </div>
-            <div class="diseñoGrafico">
-                <img src="img/icon3.png" alt="Icono">
-                <p>Diseño Gráfico Branding</p>
-            </div>
-            <div class="marketing">
-                <img src="img/icon3.png" alt="Icono">
-                <p>Marketing Seo & Sem</p>
+            <h2>Servicios</h2>
+
+            <div class="contenedorServicios">
+                <article class="service">
+                    <img src="img/icon2.png" alt="Icono">
+                    <h3>Diseño Web</h3>
+                    <p>Front-End</p>
+                </article>
+
+                <article class="service">
+                    <img src="img/icon3.png" alt="Icono">
+                    <h3>Diseño Gráfico</h3>
+                    <p>Branding</p>
+                </article>
+
+                <article class="service">
+                    <img src="img/icon3.png" alt="Icono">
+                    <h3>Marketing</h3>
+                    <p>Seo &amp; Sem</p>
+                </article>
             </div>
         </section>
 
-        <section id="masInfo">
-            <img src="img/imagenA.png" alt="A">
-            <h3>Lorem ipsum dolor sit amet.</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate itaque facilis neque quam totam
-                reiciendis, distinctio nobis.</p>
-            <a href="">Leer más</a>
+
+        <section id="nosotros">
+            <div class="sobreNosotros">
+                <img src="img/imagenA.png" alt="A">
+
+                <div class="textoNosotros">
+                    <h2>Lorem ipsum dolor sit amet.</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Donec interdum mollis risus, in mattis erat convallis egestas.</p>
+                    <a href="">Leer más</a>
+                </div>
+            </div>
         </section>
     </main>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; Todos los derechos reservados | 2016-2017</p>
-        <a href="">Correo</a>
-        <a href="">Facebook</a>
-        <a href="">Twitter</a>
+        <small>Todos los derechos reservados | 2016 -2017</small>
+        <div class="social">
+            <a href=""><img src="img/sobre.png" alt="Correo"></a>
+            <a href=""><img src="img/facebook.png" alt="Facebook"></a>
+            <a href=""><img src="img/twitter.png" alt="Twitter"></a>
+        </div>
     </footer>
 </body>
 
