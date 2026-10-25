@@ -114,6 +114,8 @@ section#info {
     }
 
     p {
+        max-width: 700px;
+        margin: auto;
         font-size: 18px;
         line-height: 1.5;
         color: var(--grisClaro);
@@ -200,6 +202,7 @@ section#nosotros {
             }
 
             a {
+                display: inline-block;
                 padding: 10px 25px;
                 border-radius: 25px;
                 background-color: var(--turquesa);
@@ -246,25 +249,40 @@ footer {
     }
 }
 
-/* TABLET Y MÓVIL */
+/* TABLET */
 
 @media (max-width: 900px) {
     header#header {
         padding: 15px 20px;
     }
 
-    section#banner h1 {
-        font-size: 55px;
+    section#banner {
+        padding: 30px 20px;
+
+        h1 {
+            font-size: 55px;
+        }
     }
 
-    .desktop-break {
-        display: none;
+    section#nosotros {
+        padding-top: 80px;
+
+        .sobreNosotros {
+            gap: 20px;
+
+            img {
+                width: 55%;
+            }
+        }
     }
 
-    section#nosotros .sobreNosotros {
-        grid-template-columns: 55% 1fr;
+    footer {
+        padding: 25px 20px;
+        gap: 20px;
     }
 }
+
+/* MÓVIL */
 
 @media (max-width: 600px) {
     header#header {
@@ -272,6 +290,8 @@ footer {
         gap: 20px;
 
         nav.menu {
+            justify-content: center;
+            flex-wrap: wrap;
             gap: 15px;
 
             a {
@@ -307,16 +327,16 @@ footer {
     }
 
     section#nosotros {
-        padding-top: 50px;
+        padding: 50px 20px;
 
         .sobreNosotros {
-            display: flex;
             flex-direction: column;
-            align-items: flex-start;
+            gap: 30px;
 
             img {
-                order: 1;
-                margin-top: 35px;
+                width: 100%;
+                max-width: 400px;
+                align-self: center;
             }
         }
     }
