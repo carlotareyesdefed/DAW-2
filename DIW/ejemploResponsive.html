@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <header id="header">
+        <div id="logo">
+            <a href="">LOGO</a>
+        </div>
+        <button>&#9776;</button>
+
+        <nav id="nav">
+            <a href="">Enlace1</a>
+            <a href="">Enlace2</a>
+            <a href="">Enlace3</a>
+            <a href="">Enlace4</a>
+        </nav>
+    </header>
+</body>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    a {
+        text-decoration: none;
+        text-transform: uppercase;
+    }
+
+    header#header {
+        display: flex;
+        margin: 20px;
+        box-shadow: 0 10px 10px rgb(218, 212, 212);
+    }
+
+    button {
+        background-color: transparent;
+        border: none;
+        order: 1;
+        margin-left: 20px;
+        display: none;
+
+        @media screen and (width<960px) {
+            display: block;
+        }
+    }
+
+    nav {
+        margin-left: auto;
+
+        a {
+            margin-left: 20px;
+        }
+    }
+</style>
+
+</html>
