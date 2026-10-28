@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Sunnyside agency landing page</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-B/GM4XqrwHnWXNOWMbloTmrYXZg10cakYGmpfsR/bbzQ6JAJI4ihuyADKLnBgrCe" crossorigin="anonymous">
+
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap"
+    rel="stylesheet">
+
+  <style>
+    header#header {
+      background-image: url("images/desktop/image-header.jpg");
+      background-repeat: no-repeat;
+      background-position: center bottom;
+      background-size: cover;
+      min-height: 800px;
+
+      .navbar {
+        background: transparent;
+
+        .nav-link {
+          color: white;
+
+          &:last-child {
+            color: black;
+            text-transform: uppercase;
+            font-family: serif;
+            font-weight: 600;
+            background-color: white;
+            border-radius: 25px;
+            padding: 10px 20px;
+          }
+        }
+      }
+
+      div#banner {
+        text-align: center;
+        padding-top: 80px;
+
+        h1 {
+          color: white;
+          font-family: "Fraunces", serif;
+          font-weight: 900;
+          font-size: 50px;
+          text-transform: uppercase;
+          letter-spacing: 8px;
+          margin-bottom: 80px;
+        }
+      }
+    }
+
+    #info .texto {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: start;
+      padding: 60px 100px;
+    }
+
+    #info .texto h3 {
+      font-family: "Fraunces", serif;
+      font-size: 36px;
+      font-weight: 900;
+      margin-bottom: 30px;
+    }
+
+    #info .texto p {
+      font-family: "Barlow", sans-serif;
+      font-size: 18px;
+      line-height: 1.7;
+      color: #818498;
+      margin-bottom: 30px;
+    }
+
+    #info .texto a {
+      font-family: "Fraunces", serif;
+      text-transform: uppercase;
+      text-decoration: none;
+      font-weight: 900;
+    }
+
+    #servicios .graphic-design,
+    #servicios .photography {
+      min-height: 600px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+
+      text-align: center;
+      padding: 50px;
+    }
+
+    #servicios .graphic-design {
+      background: url("images/desktop/image-graphic-design.jpg") no-repeat center / cover;
+    }
+
+    #servicios .photography {
+      background: url("images/desktop/image-photography.jpg") no-repeat center / cover;
+    }
+
+    #servicios p {
+      max-width: 350px;
+    }
+
+    section#testimonios {
+      min-height: 700px;
+
+      h4 {
+        font-family: "Fraunces", serif;
+        font-weight: 800;
+        letter-spacing: 4px;
+        color: #818498;
+        text-align: center;
+        text-transform: uppercase;
+        margin: 80px 0 40px;
+      }
+
+      div.personas {
+        text-align: center;
+        max-width: 350px;
+        margin: auto;
+
+        img {
+          border-radius: 50%;
+          width: 20%;
+          margin-bottom: 50px;
+        }
+
+        img+p {
+          line-height: 160%;
+          margin-bottom: 50px;
+        }
+
+        strong {
+          font-family: "Fraunces", serif;
+        }
+
+        small {
+          color: #818498;
+        }
+      }
+    }
+
+    footer#footer {
+      min-height: 400px;
+      background-color: hsl(168, 34%, 41%);
+      display: flex;
+      align-items: center;
+
+      .logo {
+        margin-bottom: 50px;
+      }
+
+      nav a {
+        text-decoration: none;
+        color: hsl(168, 34%, 25%);
+      }
+
+
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <header id="header">
+    <div class="container-fluid">
+      <nav class="navbar md:navbar-expand">
+        <div class="container-fluid px-5">
+          <a class="navbar-brand" href="#">
+            <img src="images/logo.svg" alt="">
+          </a>
+
+          <button class="btn-icon navbar-toggler" type="button" data-bs-toggle="drawer" data-bs-target="#menu"
+            aria-controls="menu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon" aria-hidden="true"></span>
+          </button>
+
+          <dialog class="drawer drawer-end" tabindex="-1" id="menu" aria-labelledby="menuLabel">
+            <div class="drawer-header">
+              <h5 class="drawer-title" id="menuLabel">Menu</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="drawer" aria-label="Close"></button>
+            </div>
+            <div class="drawer-body">
+              <div class="nav navbar-nav ms-auto">
+                <a class="nav-link" href="#">About</a>
+                <a class="nav-link" href="#">Servicios</a>
+                <a class="nav-link" href="#">Projects</a>
+                <a class="nav-link" href="#">Contact</a>
+
+              </div>
+            </div>
+          </dialog>
+        </div>
+      </nav>
+    </div>
+
+    <div id="banner">
+      <h1> We are creatives</h1>
+      <img src="images/icon-arrow-down.svg" alt="">
+    </div>
+  </header>
+
+
+
+  <main id="home">
+    <section id="info" class="container-fluid px-0">
+      <div class="row row-cols-2 gx-0">
+
+        <!-- Primera fila: texto e imagen -->
+        <div class="col texto">
+          <h3>Transform your brand</h3>
+          <p>
+            We are a full-service creative agency specializing
+            in helping brands grow fast. Engage your clients
+            through compelling visuals that do most of the
+            marketing for you.
+          </p>
+          <a href="#">Learn more</a>
+        </div>
+
+        <div class="col">
+          <img src="images/desktop/image-transform.jpg" class="img-fluid w-100 d-block" alt="">
+        </div>
+
+        <!-- Segunda fila: imagen y texto -->
+        <div class="col">
+          <img src="images/desktop/image-stand-out.jpg" class="img-fluid w-100 d-block" alt="">
+        </div>
+
+        <div class="col texto">
+          <h3>Stand out to the right audience</h3>
+          <p>
+            Using a collaborative formula of designers,
+            researchers, photographers, videographers,
+            and copywriters, we’ll build and extend
+            your brand in digital places.
+          </p>
+          <a href="#">Learn more</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="servicios" class="container-fluid px-0">
+      <div class="row gx-0">
+
+        <div class="col-12 md:col-6 graphic-design">
+          <h3>Graphic design</h3>
+          <p>
+            Great design makes you memorable.
+            We deliver artwork that underscores
+            your brand message.
+          </p>
+        </div>
+
+        <div class="col-12 md:col-6 photography">
+          <h3>Photography</h3>
+          <p>
+            Increase your credibility by getting
+            the most stunning, high-quality photos.
+          </p>
+        </div>
+
+      </div>
+    </section>
+    <section id="testimonios" class="container">
+      <div class="row">
+        <div class="col-12 mb-12 mt-12">
+          <h4>Client testimonials</h4>
+        </div>
+        <div class="col-4 personas">
+          <img src="images/image-emily.jpg" alt="">
+          <p> We put our trust in Sunnyside and they delivered, making sure our needs were met and deadlines were always
+            hit.</p>
+          <p><strong>Emily R.</strong></p>
+          <small> Marketing Director</small>
+        </div>
+        <div class="col-4 personas">
+          <img src="images/image-thomas.jpg" alt="">
+          <p> Sunnyside’s enthusiasm coupled with their keen interest in our brand’s success made it a satisfying and
+            enjoyable experience.</p>
+          <p><strong>Thomas S.</strong></p>
+          <small>Chief Operating Officer</small>
+        </div>
+        <div class="col-4 personas">
+          <img src="images/image-jennie.jpg" alt="">
+          <p>Incredible end result! Our sales increased over 400% when we worked with Sunnyside. Highly recommended!</p>
+          <p><strong>Jennie F.</strong></p>
+          <small>Business Owner</small>
+        </div>
+      </div>
+    </section>
+
+    <section id="fotos">
+      <section id="fotos">
+        <div class="container-fluid px-0">
+          <div class="row row-cols-4 gx-0">
+            <div class="col">
+              <img src="images/desktop/image-gallery-milkbottles.jpg" class="img-fluid w-100" alt="">
+            </div>
+            <div class="col">
+              <img src="images/desktop/image-gallery-orange.jpg" class="img-fluid w-100" alt="">
+            </div>
+            <div class="col">
+              <img src="images/desktop/image-gallery-cone.jpg" class="img-fluid w-100" alt="">
+            </div>
+            <div class="col">
+              <img src="images/desktop/image-gallery-sugarcubes.jpg" class="img-fluid w-100" alt="">
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <footer id="footer">
+    <div class="container text-center">
+
+      <!-- Logo -->
+      <div class="row logo">
+        <div class="col">
+          <img src="images/logo.svg" alt="Sunnyside">
+        </div>
+      </div>
+
+      <!-- Menú -->
+      <div class="row">
+        <div class="col">
+          <nav class="d-flex justify-content-center gap-5">
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Projects</a>
+          </nav>
+        </div>
+      </div>
+
+      <!-- Redes sociales -->
+      <div class="row mt-5">
+        <div class="col">
+          <div class="d-flex justify-content-center gap-4">
+            <a href="#"><img src="images/icon-facebook.svg" alt="Facebook"></a>
+            <a href="#"><img src="images/icon-instagram.svg" alt="Instagram"></a>
+            <a href="#"><img src="images/icon-twitter.svg" alt="Twitter"></a>
+            <a href="#"><img src="images/icon-pinterest.svg" alt="Pinterest"></a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <script type="module" src="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-1a/pXj49ZQ1aHEmrJ+gMw1otqoVsYwlEnlD8mIfY2TV03r20Y0CN7uqx1tQogjPL"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
