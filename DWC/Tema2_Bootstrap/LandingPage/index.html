@@ -163,15 +163,43 @@
       align-items: center;
 
       .logo {
-        margin-bottom: 50px;
+        margin-bottom: 30px;
       }
 
       nav a {
         text-decoration: none;
         color: hsl(168, 34%, 25%);
+        font-weight: 600;
+        margin-bottom: 40px;
       }
 
+      div.social a {
+        margin-left: 20px;
 
+        &:first-child {
+          margin-left: 0;
+        }
+      }
+    }
+
+    @media (max-width: 767.98px) {
+
+      header#header {
+        background-image: url("images/mobile/image-header.jpg");
+        background-position: center bottom;
+        background-size: cover;
+        min-height: 540px;
+      }
+
+      header#header div#banner {
+        padding-top: 50px;
+      }
+
+      header#header div#banner h1 {
+        font-size: 32px;
+        letter-spacing: 5px;
+        margin-bottom: 50px;
+      }
     }
   </style>
 
@@ -220,31 +248,42 @@
 
 
   <main id="home">
-    <section id="info" class="container-fluid px-0">
-      <div class="row row-cols-2 gx-0">
 
-        <!-- Primera fila: texto e imagen -->
-        <div class="col texto">
+    <section id="info" class="container-fluid px-0">
+
+      <!-- Primera fila -->
+      <div class="row gx-0">
+
+        <div class="col-12 md:col-6 texto order-2 md:order-1">
           <h3>Transform your brand</h3>
           <p>
-            We are a full-service creative agency specializing
-            in helping brands grow fast. Engage your clients
-            through compelling visuals that do most of the
-            marketing for you.
+            We are a full-service creative agency
+            specializing in helping brands grow fast.
+            Engage your clients through compelling visuals
+            that do most of the marketing for you.
           </p>
           <a href="#">Learn more</a>
         </div>
 
-        <div class="col">
-          <img src="images/desktop/image-transform.jpg" class="img-fluid w-100 d-block" alt="">
+        <div class="col-12 md:col-6 order-1 md:order-2">
+          <picture>
+            <source media="(max-width: 767.98px)" srcset="images/mobile/image-transform.jpg">
+            <img src="images/desktop/image-transform.jpg" class="img-fluid w-100 d-block" alt="Huevo">
+          </picture>
+        </div>
+      </div>
+
+      <!-- Segunda fila -->
+      <div class="row gx-0">
+
+        <div class="col-12 md:col-6">
+          <picture>
+            <source media="(max-width: 767.98px)" srcset="images/mobile/image-stand-out.jpg">
+            <img src="images/desktop/image-stand-out.jpg" class="img-fluid w-100 d-block" alt="Copa rosa">
+          </picture>
         </div>
 
-        <!-- Segunda fila: imagen y texto -->
-        <div class="col">
-          <img src="images/desktop/image-stand-out.jpg" class="img-fluid w-100 d-block" alt="">
-        </div>
-
-        <div class="col texto">
+        <div class="col-12 md:col-6 texto">
           <h3>Stand out to the right audience</h3>
           <p>
             Using a collaborative formula of designers,
@@ -254,8 +293,10 @@
           </p>
           <a href="#">Learn more</a>
         </div>
+
       </div>
     </section>
+
 
     <section id="servicios" class="container-fluid px-0">
       <div class="row gx-0">
@@ -284,21 +325,21 @@
         <div class="col-12 mb-12 mt-12">
           <h4>Client testimonials</h4>
         </div>
-        <div class="col-4 personas">
+        <div class="col-12 md:col-4 personas">
           <img src="images/image-emily.jpg" alt="">
           <p> We put our trust in Sunnyside and they delivered, making sure our needs were met and deadlines were always
             hit.</p>
           <p><strong>Emily R.</strong></p>
           <small> Marketing Director</small>
         </div>
-        <div class="col-4 personas">
+        <div class="col-12 md:col-4 personas">
           <img src="images/image-thomas.jpg" alt="">
           <p> Sunnyside’s enthusiasm coupled with their keen interest in our brand’s success made it a satisfying and
             enjoyable experience.</p>
           <p><strong>Thomas S.</strong></p>
           <small>Chief Operating Officer</small>
         </div>
-        <div class="col-4 personas">
+        <div class="col-12 md:col-4 personas">
           <img src="images/image-jennie.jpg" alt="">
           <p>Incredible end result! Our sales increased over 400% when we worked with Sunnyside. Highly recommended!</p>
           <p><strong>Jennie F.</strong></p>
@@ -310,7 +351,7 @@
     <section id="fotos">
       <section id="fotos">
         <div class="container-fluid px-0">
-          <div class="row row-cols-4 gx-0">
+          <div class="row row-cols-2 md:row-cols-4 gx-0">
             <div class="col">
               <img src="images/desktop/image-gallery-milkbottles.jpg" class="img-fluid w-100" alt="">
             </div>
@@ -353,7 +394,7 @@
       <!-- Redes sociales -->
       <div class="row mt-5">
         <div class="col">
-          <div class="d-flex justify-content-center gap-4">
+          <div class="d-flex justify-content-center gap-4 social">
             <a href="#"><img src="images/icon-facebook.svg" alt="Facebook"></a>
             <a href="#"><img src="images/icon-instagram.svg" alt="Instagram"></a>
             <a href="#"><img src="images/icon-twitter.svg" alt="Twitter"></a>
