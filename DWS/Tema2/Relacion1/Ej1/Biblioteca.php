@@ -14,28 +14,44 @@ class Biblioteca
             }
         }
 
-        $this->libros[] = $libro;
+        $this->libros[$libro->getIsbn()] = $libro;
     }
 
     public function buscarLibro($isbn): ?Libro
     {
-        foreach ($this->libros as $libro) {
+
+        /*  foreach ($this->libros as $libro) {
             if ($libro->getIsbn() === $isbn) {
                 return $libro;
             }
         }
 
+
         return null;
+        */
+
+        return $this->libros[$isbn] ?? null;
     }
 
     public function disponibles(): array
     {
-        $disponibles = [];
-        foreach ($this->libros as $libro) {
-            if ($libro->estaDisponible()) {
-                $disponibles[] = $libro;
-            }
-        }
-        return $disponibles;
+        /* $disponibles = [];
+         foreach ($this->libros as $libro) {
+             if ($libro->estaDisponible()) {
+                 $disponibles[$libro->getIsbn()] = $libro;
+             }
+         }
+         return $disponibles;*/
+
+        return array_values(
+            array_filter(
+                $this->libros,
+                fn(Libro $li) => $li->estaDisponible()
+            )
+        );
     }
+
+
+
+
 }
