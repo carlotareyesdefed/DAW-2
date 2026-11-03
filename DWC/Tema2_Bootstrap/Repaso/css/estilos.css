@@ -67,6 +67,7 @@ header {
    box-shadow: 0 10px 12px var(--color-fondo-suave);
    position: sticky;
    top: 0;
+   z-index: 100;
 
    nav.navbar {
 
