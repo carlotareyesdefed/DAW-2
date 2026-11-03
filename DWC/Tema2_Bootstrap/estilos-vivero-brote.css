@@ -1,0 +1,668 @@
+/* =====================================================================
+   EXAMEN · VIVERO BROTE
+   Bootstrap 6 se utiliza únicamente para la rejilla y la navbar.
+   Todos los componentes visuales se diseñan con CSS propio.
+   ===================================================================== */
+
+/* 1. VARIABLES DE COLOR Y TIPOGRAFÍA */
+:root {
+  --color-principal: #2F6B4F;
+  --color-acento: #E9A23B;
+  --color-oscuro: #14241C;
+  --color-fondo-suave: #EEF3EC;
+  --color-texto: #1D2A23;
+  --color-texto-suave: #5E6E64;
+  --color-blanco: #FFFFFF;
+  --color-pie: #0F1A14;
+  --color-borde: #D5DFD5;
+
+  --radio: 18px;
+  --sombra: 0 12px 32px rgba(20, 36, 28, .09);
+  --fuente-titulos: 'Fraunces', serif;
+  --fuente-texto: 'Work Sans', sans-serif;
+}
+
+/* 2. TIPOGRAFÍA */
+body {
+  font-family: var(--fuente-texto);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--fuente-titulos);
+  font-weight: 600;
+  line-height: 1.05;
+}
+
+/* 3. GENERAL */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  margin: 0;
+  color: var(--color-texto);
+  background-color: var(--color-blanco);
+}
+
+h1, h2, h3, h4 {
+  margin: 0;
+  color: var(--color-oscuro);
+  letter-spacing: -.01em;
+}
+
+p {
+  margin: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Ancho del contenido de la captura de escritorio. */
+.container {
+  max-width: 1200px;
+}
+
+/* 4. CABECERA Y MENÚ */
+.cabecera {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: var(--color-blanco);
+  border-bottom: 1px solid var(--color-borde);
+}
+
+.cabecera .navbar {
+  min-height: 88px;
+  padding: .8rem 0;
+}
+
+.cabecera .navbar > .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.cabecera .navbar-brand {
+  padding: 0;
+  margin: 0;
+}
+
+.cabecera .navbar-brand img {
+  height: 44px;
+  width: auto;
+}
+
+.cabecera .navbar-nav {
+  gap: .25rem;
+}
+
+.cabecera .nav-link {
+  display: block;
+  border-radius: 999px;
+  padding: .5rem .85rem;
+  color: var(--color-oscuro);
+  font-weight: 600;
+  transition: background-color .2s, color .2s;
+}
+
+.cabecera .nav-link:hover,
+.cabecera .nav-link:focus-visible {
+  color: var(--color-principal);
+  background-color: var(--color-fondo-suave);
+}
+
+.cabecera .navbar-toggler {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  padding: .65rem;
+  border: 0;
+  border-radius: 50%;
+  background-color: var(--color-fondo-suave);
+  box-shadow: none;
+  cursor: pointer;
+}
+
+/* Icono visible incluso sin depender de las variables de tema de Bootstrap. */
+.cabecera .navbar-toggler-icon {
+  width: 22px;
+  height: 18px;
+  background-image:
+    linear-gradient(var(--color-oscuro), var(--color-oscuro)),
+    linear-gradient(var(--color-oscuro), var(--color-oscuro)),
+    linear-gradient(var(--color-oscuro), var(--color-oscuro));
+  background-repeat: no-repeat;
+  background-size: 100% 2px;
+  background-position: center top, center center, center bottom;
+}
+
+#menu {
+  width: 100%;
+  flex-basis: 100%;
+}
+
+#menu.show,
+#menu.collapsing {
+  margin-top: 1rem;
+  padding: .75rem;
+  border-radius: 12px;
+  background-color: var(--color-fondo-suave);
+}
+
+/* 5. BOTONES Y ETIQUETAS */
+.boton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 58px;
+  padding: .85rem 1.65rem;
+  border: 2px solid transparent;
+  border-radius: 999px;
+  font-size: .95rem;
+  line-height: 1.25;
+  font-weight: 600;
+  text-align: center;
+  white-space: nowrap;
+  transition: transform .2s, background-color .2s, color .2s;
+}
+
+.boton:hover {
+  transform: translateY(-2px);
+}
+
+.boton-principal {
+  color: var(--color-blanco);
+  background-color: var(--color-principal);
+  border-color: var(--color-principal);
+}
+
+.boton-principal:hover {
+  color: var(--color-blanco);
+  background-color: var(--color-oscuro);
+  border-color: var(--color-oscuro);
+}
+
+.boton-contorno {
+  color: var(--color-principal);
+  border-color: var(--color-principal);
+  background-color: transparent;
+}
+
+.boton-contorno:hover {
+  color: var(--color-blanco);
+  background-color: var(--color-principal);
+}
+
+.etiqueta {
+  color: var(--color-principal);
+  font-size: .85rem;
+  font-weight: 700;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+}
+
+/* 6. HERO */
+.hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 760px;
+  padding: 6rem 0;
+  isolation: isolate;
+  background: url('../img/hero.svg') no-repeat center center / cover;
+  text-align: center;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-color: rgba(238, 243, 236, .35);
+}
+
+.hero-contenido {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero h1 {
+  max-width: 14ch;
+  margin: 1.5rem 0 1.5rem;
+  font-size: clamp(3rem, 8vw, 6.25rem);
+  line-height: 1;
+}
+
+.hero-descripcion {
+  max-width: 34rem;
+  color: var(--color-texto-suave);
+  font-size: 1.15rem;
+  font-weight: 500;
+}
+
+.hero-botones {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2.25rem;
+}
+
+/* 7. SECCIONES */
+.seccion {
+  padding: 5rem 0;
+}
+
+.seccion-clara {
+  background-color: var(--color-fondo-suave);
+}
+
+.titulo-seccion {
+  margin-bottom: .85rem;
+  font-size: clamp(2.2rem, 4.5vw, 3.2rem);
+  text-align: center;
+}
+
+.descripcion-seccion {
+  max-width: 36rem;
+  margin: 0 auto 3rem;
+  color: var(--color-texto-suave);
+  font-weight: 500;
+  text-align: center;
+}
+
+/* 8. CUIDADOS */
+.tarjeta-cuidado {
+  height: 100%;
+  padding: 2rem;
+  border-radius: var(--radio);
+  background-color: var(--color-fondo-suave);
+}
+
+.icono-cuidado {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  margin-bottom: 1.3rem;
+  border-radius: 50%;
+  background-color: var(--color-blanco);
+}
+
+.icono-cuidado img {
+  width: 36px;
+  height: 36px;
+}
+
+.tarjeta-cuidado h3 {
+  margin-bottom: .65rem;
+  font-size: 1.75rem;
+}
+
+.tarjeta-cuidado p {
+  color: var(--color-texto-suave);
+  font-weight: 500;
+}
+
+/* 9. CATÁLOGO DE PLANTAS */
+.tarjeta-planta {
+  height: 100%;
+  overflow: hidden;
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio);
+  background-color: var(--color-blanco);
+  transition: transform .25s, box-shadow .25s;
+}
+
+.tarjeta-planta:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--sombra);
+}
+
+.imagen-planta {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+}
+
+.imagen-planta img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sello-nueva {
+  position: absolute;
+  top: 1.1rem;
+  left: 1.1rem;
+  padding: .3rem .85rem;
+  border-radius: 999px;
+  color: var(--color-oscuro);
+  background-color: var(--color-acento);
+  font-size: .8rem;
+  font-weight: 700;
+}
+
+.datos-planta {
+  padding: 1.5rem 1.25rem;
+}
+
+.categoria-planta {
+  margin-bottom: .65rem;
+  color: var(--color-texto-suave);
+  font-size: .75rem;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+.datos-planta h3 {
+  margin-bottom: .7rem;
+  font-size: 1.6rem;
+}
+
+.precio-planta {
+  color: var(--color-principal);
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+/* 10. TALLERES */
+.agenda {
+  max-width: 52rem;
+  margin: 0 auto;
+}
+
+.taller {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--color-borde);
+}
+
+.taller:last-child {
+  border-bottom: 1px solid var(--color-borde);
+}
+
+.fecha-taller {
+  display: flex;
+  flex: 0 0 96px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 96px;
+  min-height: 96px;
+  padding: .4rem;
+  border-radius: 14px;
+  background-color: var(--color-oscuro);
+}
+
+.dia-taller {
+  color: var(--color-acento);
+  font-family: var(--fuente-titulos);
+  font-size: 2.5rem;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.mes-taller {
+  margin-top: .25rem;
+  color: var(--color-blanco);
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.informacion-taller {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.informacion-taller h3 {
+  margin-bottom: .4rem;
+  font-size: 1.6rem;
+}
+
+.informacion-taller p {
+  color: var(--color-texto-suave);
+  font-size: .95rem;
+  font-weight: 500;
+}
+
+.plazas-taller {
+  flex-shrink: 0;
+  padding: .5rem .9rem;
+  border-radius: 999px;
+  color: var(--color-principal);
+  background-color: var(--color-fondo-suave);
+  font-size: .85rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* 11. PIE */
+.pie {
+  padding: 4rem 0 0;
+  color: #A9B8AE;
+  background-color: var(--color-pie);
+}
+
+.logo-pie {
+  display: inline-flex;
+  align-items: center;
+  width: 180px;
+  padding: 1.1rem;
+  border-radius: 14px;
+  background-color: var(--color-blanco);
+}
+
+.logo-pie img {
+  width: 100%;
+}
+
+.contacto-pie {
+  margin-top: 1.75rem;
+  font-style: normal;
+}
+
+.contacto-pie p {
+  display: flex;
+  align-items: center;
+  gap: .7rem;
+  margin-bottom: .75rem;
+  font-size: .9rem;
+  font-weight: 500;
+}
+
+.contacto-pie img {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  filter: brightness(0) invert(1);
+}
+
+.contacto-pie a:hover {
+  color: var(--color-blanco);
+}
+
+.horario-pie h2 {
+  margin-bottom: 1rem;
+  color: var(--color-acento);
+  font-size: 1.4rem;
+}
+
+.horario-pie p {
+  margin-bottom: .8rem;
+  font-size: .95rem;
+}
+
+.horario-pie strong,
+.horario-pie span {
+  display: block;
+}
+
+.horario-pie strong {
+  color: var(--color-blanco);
+  font-weight: 600;
+}
+
+.copyright {
+  margin-top: 3.5rem;
+  padding: 1.65rem 0;
+  border-top: 1px solid rgba(255, 255, 255, .12);
+  font-size: .85rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+/* 12. RESPONSIVE: corte md = 768px */
+@media screen and (width >= 768px) {
+  .cabecera .navbar-toggler {
+    display: none;
+  }
+
+  .cabecera #menu,
+  .cabecera #menu.collapse {
+    display: flex !important;
+    flex-basis: auto;
+    width: auto;
+    block-size: auto !important;
+    height: auto !important;
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+    background: transparent;
+  }
+
+  .cabecera .navbar-nav {
+    display: flex;
+    flex-direction: row;
+    gap: 2.25rem;
+  }
+
+  .cabecera .nav-link {
+    padding: .5rem 0;
+  }
+
+  .cabecera .nav-link:hover,
+  .cabecera .nav-link:focus-visible {
+    padding-inline: .55rem;
+    margin-inline: -.55rem;
+  }
+}
+
+@media screen and (width < 768px) {
+  .cabecera .navbar {
+    min-height: 88px;
+  }
+
+  .hero {
+    min-height: 680px;
+    padding: 4rem 0;
+  }
+
+  .hero::before {
+    background-color: rgba(238, 243, 236, .60);
+  }
+
+  .hero h1 {
+    margin: 1.25rem 0;
+    font-size: 3.4rem;
+  }
+
+  .hero-descripcion {
+    font-size: 1.05rem;
+  }
+
+  .hero-botones {
+    flex-direction: column;
+    width: 100%;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  .hero-botones .boton {
+    width: 100%;
+  }
+
+  .seccion {
+    padding: 4rem 0;
+  }
+
+  .titulo-seccion {
+    font-size: 2.2rem;
+  }
+
+  .tarjeta-cuidado {
+    padding: 2rem;
+  }
+
+  .taller {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .fecha-taller {
+    flex: 0 0 auto;
+    flex-direction: row;
+    gap: .5rem;
+    width: auto;
+    min-height: 0;
+    padding: .45rem .8rem;
+    border-radius: 12px;
+  }
+
+  .dia-taller {
+    font-size: 2rem;
+  }
+
+  .mes-taller {
+    margin-top: 0;
+    align-self: center;
+  }
+
+  .informacion-taller h3 {
+    font-size: 1.5rem;
+  }
+
+  .plazas-taller {
+    align-self: flex-start;
+  }
+
+  .horario-pie {
+    margin-top: .3rem;
+  }
+
+  .copyright {
+    margin-top: 3rem;
+  }
+}

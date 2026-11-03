@@ -1,0 +1,446 @@
+/* =====================================================================
+   EXAMEN (3 horas) · Landing "Vivero Brote"
+   Archivo para completar: css/estilos.css
+   ---------------------------------------------------------------------
+   REGLA: Bootstrap 6 SOLO para:
+     - Rejilla: container, row, g-*, col-*, y sus prefijos sm: md: lg: xl: 2xl:
+     - Navbar: navbar, navbar-expand (md:navbar-expand), navbar-brand,
+               navbar-toggler, navbar-toggler-icon, navbar-nav, nav-item,
+               nav-link, collapse
+   Todo lo demás (colores, botones, tarjetas, iconos, textos, espaciados,
+   imágenes, pie) se escribe aquí con CSS puro y tus propias clases.
+   ===================================================================== */
+
+/* ---------------------------------------------------------------------
+   1. VARIABLES DE COLOR Y TIPOGRAFÍA (ya definidas; úsalas con var())
+   Las fuentes Fraunces (títulos) y Work Sans (texto) se cargan en el
+   <head> del index.html desde Google Fonts.
+   --------------------------------------------------------------------- */
+:root {
+    --color-principal: #2F6B4F;
+    /* botones, etiquetas, precios */
+    --color-acento: #E9A23B;
+    /* sellos, horas, detalles destacados */
+    --color-oscuro: #14241C;
+    /* títulos y fecha de los talleres */
+    --color-fondo-suave: #EEF3EC;
+    /* bandas y tarjetas claras */
+    --color-texto: #1D2A23;
+    /* texto general */
+    --color-texto-suave: #5E6E64;
+    /* texto secundario */
+    --color-blanco: #FFFFFF;
+    --color-pie: #0F1A14;
+    /* fondo del pie */
+    --color-borde: #D5DFD5;
+    /* líneas finas */
+
+    --radio: 18px;
+    --sombra: 0 12px 32px rgba(20, 36, 28, .09);
+
+    --fuente-titulos: 'Fraunces', serif;
+    --fuente-texto: 'Work Sans', sans-serif;
+}
+
+/* ---------------------------------------------------------------------
+   2. TIPOGRAFÍA (ya configurada; no hay que modificarla)
+   --------------------------------------------------------------------- */
+body {
+    font-family: var(--fuente-texto);
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--color-texto);
+    background-color: var(--color-blanco);
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: var(--fuente-titulos);
+    font-weight: 600;
+    line-height: 1.05;
+    color: var(--color-oscuro);
+    margin: 0;
+    letter-spacing: .01em;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+ul>li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+p {
+    margin: 0;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+h2 {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+header#header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--color-blanco);
+
+    nav.navbar {
+        padding: 20px 90px;
+
+        img {
+            height: 44px;
+            width: auto;
+        }
+
+        a {
+            font-weight: 500;
+            color: var(--color-oscuro);
+            margin-left: 15px;
+
+            &:hover {
+                color: var(--color-acento);
+            }
+        }
+    }
+}
+
+section#banner {
+    background: url(../img/icono-agua.svg) no-repeat center center /cover;
+    padding: 100px 200px;
+    text-align: center;
+
+    small {
+        text-transform: uppercase;
+        font-weight: 600;
+        color: var(--color-principal);
+    }
+
+    h1 {
+        font-size: 5rem;
+        margin-bottom: 20px;
+    }
+
+    p {
+        font-weight: 700;
+        color: var(--color-texto-suave);
+        margin-bottom: 20px;
+    }
+
+    a {
+        text-decoration: none;
+        font-weight: 800;
+        margin-top: 20px;
+        padding: 10px 30px;
+        border-radius: 999px;
+        border: 2px solid var(--color-principal);
+        transition: transform 0.3s ease;
+
+        & {
+            background-color: var(--color-principal);
+            color: var(--color-blanco);
+            margin-right: 20px;
+        }
+
+        &:last-child {
+            background-color: transparent;
+            color: var(--color-principal);
+        }
+
+        &:hover {
+            transform: translateY(-2px);
+        }
+    }
+}
+
+section#reglas {
+    padding: 100px 70px;
+
+    h2+p {
+        font-weight: 700;
+        color: var(--color-texto-suave);
+        text-align: center;
+        max-width: 80%;
+        margin: 30px auto;
+    }
+
+    article {
+
+        div {
+            background-color: var(--color-fondo-suave);
+            padding: 2rem;
+            height: 100%;
+            border-radius: var(--radio);
+
+
+            img {
+                height: 60px;
+                width: auto;
+                padding: 10px;
+                margin-bottom: 1.3rem;
+                border-radius: 50%;
+                background-color: var(--color-blanco);
+            }
+
+            h4 {
+                margin-bottom: 15px;
+                font-size: 1.2rem;
+            }
+
+            p {
+                color: var(--color-texto-suave);
+                font-weight: 800;
+                font-size: 14px;
+            }
+        }
+    }
+}
+
+section#plantas {
+    background-color: var(--color-fondo-suave);
+    padding: 70px;
+
+    h2+p {
+        font-weight: 700;
+        color: var(--color-texto-suave);
+        text-align: center;
+        max-width: 80%;
+        margin: 30px auto;
+    }
+
+    article {
+        div {
+            height: 100%;
+            overflow: hidden;
+            border-radius: var(--radio);
+            background-color: var(--color-blanco);
+            transition: transform .25s;
+            box-shadow: .25s;
+
+            &:hover {
+                transform: translateY(-6px);
+                box-shadow: var(--sombra);
+            }
+
+            div.contenido {
+                padding: 15px;
+
+                small {
+                    text-transform: uppercase;
+                    font-size: 10px;
+                    letter-spacing: 2px;
+                    font-weight: 700;
+                    color: var(--color-principal);
+                }
+
+                h3 {
+                    font-size: 20px;
+                    margin-bottom: 10px;
+                }
+
+                h3+p {
+                    font-weight: 700;
+                    color: var(--color-principal);
+                }
+            }
+        }
+    }
+}
+
+section#talleres {
+    padding: 70px 90px;
+
+    h2+p {
+        font-weight: 700;
+        color: var(--color-texto-suave);
+        text-align: center;
+        max-width: 80%;
+        margin: 30px auto;
+    }
+
+    div.row>div {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        padding: 1.5rem 0;
+        border-top: 1px solid var(--color-borde);
+
+        & {
+            border-bottom: 1px solid var(--color-borde);
+        }
+
+        div#fecha {
+            display: flex;
+            flex: 0 0 96px;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 96px;
+            min-height: 96px;
+            padding: .4rem;
+            border-radius: 14px;
+            background-color: var(--color-oscuro);
+
+            p.dia {
+                color: var(--color-acento);
+                font-family: var(--fuente-titulos);
+                font-size: 2.5rem;
+                font-weight: 600;
+                line-height: 1;
+            }
+
+            p.mes {
+                margin-top: .25rem;
+                color: var(--color-blanco);
+                font-size: .7rem;
+                font-weight: 700;
+                letter-spacing: .12em;
+                text-transform: uppercase;
+            }
+        }
+
+        h4 {
+            margin-bottom: .4rem;
+            font-size: 1.6rem;
+        }
+
+        p {
+            color: var(--color-texto-suave);
+            font-size: .95rem;
+            font-weight: 500;
+        }
+
+        span {
+            flex-shrink: 0;
+            padding: .5rem .9rem;
+            border-radius: 999px;
+            color: var(--color-principal);
+            background-color: var(--color-fondo-suave);
+            font-size: .85rem;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+    }
+}
+
+footer#footer {
+    padding: 4rem 0 0;
+    color: #A9B8AE;
+    background-color: var(--color-pie);
+
+    div.logo {
+        img {
+            width: 100%;
+        }
+    }
+}
+
+
+/* ---------------------------------------------------------------------
+   4. CABECERA (navbar)
+   TODO: cabecera BLANCA con línea inferior (--color-borde), sticky arriba
+   y z-index alto. Logotipo de 44 px de alto. Enlaces en peso 500, color
+   oscuro y fondo suave al pasar el ratón.
+   Móvil: logotipo a la izquierda y hamburguesa redonda a la derecha
+   (fondo suave); el menú (#menu) se abre como un panel con
+   --color-fondo-suave y bordes redondeados (12px).
+   Escritorio (≥ 768 px, md): menú en una línea con gap de 2.25rem, sin
+   fondo y sin hamburguesa.
+   Pista: Bootstrap pone "block-size: 0" en .collapse cerrado; en
+   escritorio hay que anularlo.
+   --------------------------------------------------------------------- */
+
+/* ---------------------------------------------------------------------
+   5. BOTONES Y ETIQUETAS
+   TODO: botón en forma de píldora (border-radius 999px), peso 600, con
+   dos variantes:
+     - principal: fondo --color-principal y texto blanco
+     - contorno: fondo transparente y borde de 2px en --color-principal
+   Efecto hover: el botón sube 2 px (transform).
+   Etiqueta: mayúsculas, color principal, negrita y letter-spacing .2em.
+   --------------------------------------------------------------------- */
+
+/* ---------------------------------------------------------------------
+   6. HERO
+   TODO: sección de altura mínima 760px con la imagen img/hero.svg como
+   FONDO (background, center / cover) y el texto por encima, CENTRADO.
+   Sobre la imagen, un velo de --color-fondo-suave con 35% de opacidad.
+   Padding vertical de 6rem. Título gigante con
+   clamp(3rem, 8vw, 6.25rem), line-height 1 y máximo 14 caracteres por
+   línea. Texto de máximo 34rem en color suave y 1.15rem. Botones
+   centrados con gap de 1rem.
+   Móvil: altura mínima de 680px, velo más opaco (60%); botones a todo
+   el ancho.
+   --------------------------------------------------------------------- */
+
+/* ---------------------------------------------------------------------
+   7. SECCIONES
+   TODO: padding vertical de 5rem; variante seccion-clara con fondo
+   --color-fondo-suave; título de sección centrado con
+   clamp(2.2rem, 4.5vw, 3.2rem); descripción centrada en color suave,
+   máximo 36rem y margen inferior de 3rem.
+   --------------------------------------------------------------------- */
+
+/* ---------------------------------------------------------------------
+   8. CUIDADOS (tarjetas con icono)
+   TODO: tarjeta de fondo --color-fondo-suave, radio 18px y padding de
+   2rem, de la misma altura que su celda. Icono de 64px en un círculo
+   blanco (la imagen mide 36px). Título de 1.75rem y texto en color suave.
+   --------------------------------------------------------------------- */
+
+/* ---------------------------------------------------------------------
+   9. CATÁLOGO DE PLANTAS (tarjetas de producto)
+   TODO: cada tarjeta ocupa 6 de las 12 columnas (col-12 md:col-6): dos
+   por fila desde md (768px) y una por fila en móvil.
+   Tarjeta blanca con borde fino (--color-borde), radio 18px y overflow
+   oculto, de la misma altura que su celda. Imagen con proporción 4:5 y
+   object-fit cover. Hover: la tarjeta sube 6px y aparece --sombra.
+   Sello "Nueva": píldora --color-acento arriba a la izquierda.
+   Categoría en mayúsculas pequeñas; precio en negrita y color principal.
+   --------------------------------------------------------------------- */
+
+/* ---------------------------------------------------------------------
+   10. TALLERES (agenda)
+   TODO: agenda de máximo 52rem centrada. Cada taller es una fila con
+   separadores finos (--color-borde) y padding vertical de 1.5rem.
+   Bloque de fecha: caja --color-oscuro de 96px con el día en Fraunces
+   de 2.5rem en --color-acento y el mes en mayúsculas pequeñas.
+   Título del taller de 1.6rem; descripción en color suave.
+   Plazas: píldora de fondo suave alineada a la derecha.
+   --------------------------------------------------------------------- */
+
+/* ---------------------------------------------------------------------
+   11. PIE
+   TODO: fondo --color-pie y texto #A9B8AE; padding superior de 4rem.
+   Dos bloques: logotipo y contacto a la izquierda; horario a la derecha.
+   Logotipo dentro de una caja blanca redondeada (14px), 180px de ancho.
+   Contacto con iconos de 18px alineados; los iconos deben verse en
+   blanco (filter: brightness(0) invert(1)).
+   Título "Horario" de 1.4rem en --color-acento; el día en blanco y en
+   negrita. Línea de copyright centrada, separada por un borde fino.
+   --------------------------------------------------------------------- */
+
+/* ---------------------------------------------------------------------
+   12. RESPONSIVE (ajustes propios)
+   Corte del diseño: md (768px). Por debajo, diseño móvil; desde md, escritorio.
+   Breakpoints de Bootstrap 6: sm ≥ 576px · md ≥ 768px · lg ≥ 1024px
+   · xl ≥ 1280px · 2xl ≥ 1536px.
+   TODO en escritorio (≥ 768 px): ocultar la hamburguesa, menú en una
+   línea sin fondo y anular el block-size del collapse.
+   TODO en móvil (< 768 px): hero con menos padding y título de 3.4rem;
+   botones del hero a todo el ancho; títulos de sección de 2.2rem; cada
+   taller en columna con el bloque de fecha arriba.
+   --------------------------------------------------------------------- */

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vivero Brote · Plantas, macetas y talleres en Málaga</title>
+
+  <!-- Google Fonts: Fraunces (títulos) y Work Sans (texto) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=Work+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Bootstrap 6 (CSS) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/css/bootstrap.min.css">
+
+  <!-- Tus estilos -->
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body>
+  <header id="header">
+    <nav class="navbar md:navbar-expand">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#inicio">
+          <img alt="Logo" src="img/planta-1.svg" width="200" />
+        </a>
+        <button class="btn-icon navbar-toggler" type="button" data-bs-toggle="drawer" data-bs-target="#menu"
+          aria-controls="menu" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon" aria-hidden="true"></span>
+        </button>
+        <dialog class="drawer drawer-end" tabindex="-1" id="menu" aria-labelledby="menuLabel">
+          <div class="drawer-header">
+            <h5 class="drawer-title" id="menuLabel">Menu</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="drawer" aria-label="Close"></button>
+          </div>
+          <div class="drawer-body">
+            <div class="nav navbar-nav ms-auto">
+              <a href="#inicio">Plantas</a>
+              <a href="#espacios">Cuidados</a>
+              <a href="#planes">Talleres</a>
+              <a href="#testimonios">Visítanos</a>
+            </div>
+          </div>
+        </dialog>
+      </div>
+    </nav>
+  </header>
+
+  <section id="banner">
+    <small>Vivero urbano . Málaga</small>
+    <h1>Cultiva calma en tu casa</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate non minus perspiciatis ullam similique odit
+      repellat ipsum? Iure, sequi sint quisquam quod quam ullam, suscipit quibusdam perspiciatis quaerat error
+      aspernatur.</p>
+    <a href="">Ver catálogo</a>
+    <a href="">Reservar un taller</a>
+  </section>
+
+  <main id="main">
+    <section id="reglas">
+      <div id="container">
+        <h2>Tres reglas de oro</h2>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores quaerat a doloribus perferendis.</p>
+        <div id="row" class="row row-cols-1 md:row-cols-3">
+          <article>
+            <div>
+              <img src="img/icono-maceta.svg" alt="Sol">
+              <h4>Luz indirecta</h4>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia iure iste sunt sapiente laborum? Ad.
+              </p>
+            </div>
+          </article>
+          <article>
+            <div>
+              <img src="img/icono-email.svg" alt="Sol">
+              <h4>Luz indirecta</h4>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia iure iste sunt sapiente laborum? Ad.
+              </p>
+            </div>
+          </article>
+          <article>
+            <div>
+              <img src="img/icono-telefono.svg" alt="Sol">
+              <h4>Luz indirecta</h4>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia iure iste sunt sapiente laborum? Ad.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="plantas">
+      <div id="container">
+        <h2>Plantas de temporada</h2>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate, dolores itaque?</p>
+        <div id="row" class="row row-cols-1 md:row-cols-2 g-3">
+          <article>
+            <div>
+              <img alt="" src="img/planta-2.svg" />
+              <div class="contenido">
+                <small>Alta luz</small>
+                <h3>Monsterra</h3>
+                <p>24€</p>
+              </div>
+            </div>
+          </article>
+          <article>
+            <div>
+              <img alt="" src="img/planta-3.svg" />
+              <div class="contenido">
+                <small>Ambiente húmedo</small>
+                <h3>Helecho nido</h3>
+                <p>18€</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="talleres">
+      <div id="container">
+        <h2>Próximos talleres</h2>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod eligendi itaque facere.</p>
+        <div id="row" class="row row-cols-1">
+          <div>
+            <div id="fecha">
+              <p class="dia">12</p>
+              <p class="mes">Mar</p>
+            </div>
+            <h4>Macetas de cerámica en 2 horas</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            <span>4 plazas</span>
+          </div>
+          <div>
+            <div id="fecha">
+              <p class="dia">19</p>
+              <p class="mes">Mar</p>
+            </div>
+            <h4>Macetas de cerámica en 2 horas</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            <span>2 plazas</span>
+          </div>
+          <div>
+            <div id="fecha">
+              <p class="dia">26</p>
+              <p class="mes">Mar</p>
+            </div>
+            <h4>Macetas de cerámica en 2 horas</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            <span>6 plazas</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="footer">
+    <div class="container">
+      <div class="row">
+        <div class="md:col-6 logo">
+          <img alt="" src="img/planta-1.svg" />
+          <ul>
+            <li><img alt="" src="img/logo.svg">Calle de las Flores 8, Málaga</li>
+            <li><img alt="" src="img/icono-luz.svg" />912 345 678</li>
+            <li><img alt="" src="img/icono-ubicacion.svg" />hola@viverobrote.es</li>
+          </ul>
+        </div>
+        <div class="md:col-6">
+          <h5>Horario</h5>
+          <p><strong>Lunes a viernes</strong></p>
+          <p>10:00-20:00</p>
+          <p><strong>Sábados</strong></p>
+          <p>10:00-21:00</p>
+          <p><strong>Domingos</strong></p>
+          <p>11:00-15:00</p>
+        </div>
+  </footer>
+
+  <!-- Bootstrap 6 (JavaScript) -->
+  <script type="module"
+    src="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
