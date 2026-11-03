@@ -3,23 +3,23 @@ class Ventana
 {
     private bool $abierta = false;
 
-    function abrir(): void
+    public function abrir(): void
     {
         $this->abierta = true;
     }
 
-    function cerrar(): void
+    public function cerrar(): void
     {
         $this->abierta = false;
     }
 
-    function estaAbierta(): bool
+    public function estaAbierta(): bool
     {
         return $this->abierta;
     }
 
-    function __tostring()
+    public function __tostring(): string
     {
-        return $this->estaAbierta() ? "La ventana está abierta" : "La ventana está cerrada";
+        return $this->estaAbierta() ? "abierta" : "cerrada";
     }
 }
