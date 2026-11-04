@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    body {
+        min-height: 100vh;
+        align-content: center;
+        perspective: 1000px;
+
+        div.card {
+            width: 300px;
+            height: 400px;
+            box-shadow: 0 0 10px rgba(148, 47, 47, 0.12);
+            border: solid 0.5px;
+            position: relative;
+            margin: auto;
+            font-size: 8rem;
+            text-align: center;
+            transform-style: preserve-3d;
+            transition: ease 1.5s;
+
+            &:hover {
+                transform: rotateY(180deg);
+                transition: ease 1.5s;
+            }
+
+            div {
+                position: absolute;
+                inset: 0;
+            }
+
+            div.A {
+                background-color: aquamarine;
+                z-index: 1;
+                backface-visibility: hidden;
+
+            }
+
+            div.B {
+                background-color: brown;
+
+            }
+        }
+
+
+    }
+</style>
+
+<body>
+
+    <div class="card">
+        <div class="A">
+            <p>A</p>
+        </div>
+        <div class="B">
+            <p>B</p>
+        </div>
+    </div>
+</body>
+
+</html>
