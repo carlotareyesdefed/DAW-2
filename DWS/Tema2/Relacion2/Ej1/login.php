@@ -49,10 +49,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <body>
     <h1>Acceso al panel de incidencias</h1>
-    <?php foreach ($incidencias as $i): ?>
-        <p><strong><?= htmlspecialchars($i['aula'], ENT_QUOTES, 'UTF-8') ?></strong></p>
-
-    <?php endforeach; ?>
     <!-- TODO: mostrar errores y el formulario con correo y contraseña. -->
     <?php if ($error !== ''): ?>
         <p><?= htmlspecialchars($error, ENT_QUOTES, 'UTF-8') ?></p>
