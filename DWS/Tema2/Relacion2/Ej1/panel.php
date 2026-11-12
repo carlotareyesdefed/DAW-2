@@ -35,9 +35,11 @@ if (!is_array($revisadas)) {
 </head>
 
 <body>
+
+    <!-- saludo, estado de incidencias y botones POST para revisar. -->
     <h1>Incidencias del centro</h1>
     <h2>Hola, <?= $nombre ?></h2>
-    <p><strong>Perfil: </strong> <?= $perfil ?></p>
+    <p><strong>Perfil: </strong> <?= ucfirst($perfil) ?></p>
 
     <table border="1">
         <thead>
@@ -67,7 +69,7 @@ if (!is_array($revisadas)) {
                     <td>
                         <?php if (!$estaRevisada): ?>
                             <form action="revisar.php" method="post">
-                                <input type="hidden" name="id" value="<?= escapar($id) ?>">
+                                <input type="hidden" name="id" value="<?= $id ?>">
                                 <button type="submit">
                                     Marcar como revisada
                                 </button>
@@ -80,8 +82,10 @@ if (!is_array($revisadas)) {
         </tbody>
     </table>
 
+    <?php if ($perfil === "coordinacion"): ?>
+        <a href="informe.php">Informe</a>
+    <?php endif; ?>
 
-    <!-- TODO: saludo, estado de incidencias y botones POST para revisar. -->
     <!-- TODO: enlace al informe y formulario POST de cierre de sesión. -->
 </body>
 
