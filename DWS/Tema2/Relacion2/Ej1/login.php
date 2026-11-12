@@ -10,7 +10,7 @@ if (isset($_SESSION['nombre'])) {
     exit;
 }
 // validar las credenciales recibidas por POST.
-function autenticar(string $email, string $clave): ?string
+function autenticar(string $email, string $clave): ?array
 {
     $cuentas = obtenerUsuarios();
     $email = strtolower(trim($email));
@@ -20,22 +20,24 @@ function autenticar(string $email, string $clave): ?string
     if (!password_verify($clave, $cuentas[$email]['hash'])) {
         return null;
     }
-    return $cuentas[$email]['nombre'];
+    return $cuentas[$email];
 }
 
 // regenerar el ID, guardar los datos necesarios y redirigir.
 $error = '';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $email = trim((string) ($_POST['email'] ?? ''));
+    $email = strtolower(trim((string) ($_POST['email'] ?? '')));
     $clave = (string) ($_POST['clave'] ?? '');
-    $nombre = autenticar($email, $clave);
-    if ($nombre !== null) {
+    $datos = autenticar($email, $clave);
+    if ($datos !== null) {
         session_regenerate_id(true);
-        $_SESSION['nombre'] = $nombre;
+        $_SESSION['nombre'] = $datos['nombre'];
+        $_SESSION['correo'] = $email;
+        $_SESSION['perfil'] = $datos['perfil'];
         header('Location: panel.php');
         exit;
     }
-    $error = 'Credenciales incorrectas.';
+    $error = 'Datos de acceso incorrectos.';
 }
 
 ?>
