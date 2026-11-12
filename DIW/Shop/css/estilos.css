@@ -1,0 +1,54 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+p,
+a {
+    font-family: sans-serif;
+    color: black;
+}
+
+header#header {
+    padding: 30px;
+    display: flex;
+
+    div#logo {
+        p {
+            font-size: 20px;
+        }
+    }
+
+    nav#menu {
+        margin-left: auto;
+        display: flex;
+        gap: 20px;
+        font-size: 15px;
+
+        a {
+            color: black;
+        }
+    }
+}
+
+main#main{
+    h1{
+        font-size: 50px;
+        font-weight: 300;
+        margin: 40px;
+    }
+
+    section#catalogo{
+        margin: 0 40px 60px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 40px;
+        
+        img{
+            width: 100%;
+        }
+    }
+}
