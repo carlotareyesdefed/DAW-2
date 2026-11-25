@@ -36,11 +36,12 @@ class EquipoRepositorio
     }
     public function listarPrestamos(): array
     {
-        // Completa la consulta con INNER JOIN.
         return $this->pdo
-            ->query('SELECT p.id, e.nombre, p.persona, p.devuelto FROM equipo AS e INNER JOIN prestamo AS p ON e.id = p.id_equipo ORDER BY p.id DESC')
+            ->query('SELECT p.id, e.nombre, p.persona, p.devuelto
+                FROM equipo AS e
+                INNER JOIN prestamo AS p ON e.id = p.equipo_id
+                ORDER BY p.id DESC')
             ->fetchAll();
-        ;
     }
 
     public function prestar(int $equipoId, string $persona): void
@@ -54,7 +55,7 @@ class EquipoRepositorio
         $equipos = $this->listarEquipos();
 
         foreach ($equipos as $equipo) {
-            
+
             if ($equipo['id'] === $equipoId) {
 
                 if ($equipo['disponibles'] <= 0) {
@@ -86,8 +87,12 @@ class EquipoRepositorio
         $sentencia->execute([$prestamoId]);
         $prestamo = $sentencia->fetch();
 
-        if ($prestamo === false || $prestamo['devuelto'] === 1) {
-            return false;
+        if ($prestamo === false) {
+            throw new InvalidArgumentException('El préstamo no existe.');
+        }
+
+        if ($prestamo['devuelto'] === 1) {
+            throw new InvalidArgumentException('El préstamo ya está devuelto.');
         }
 
         // Cambia el estado solamente si el préstamo sigue abierto.
