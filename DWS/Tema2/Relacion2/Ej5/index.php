@@ -81,8 +81,8 @@ try {
             <?php foreach ($equipos as $equipo): ?>
                 <tr>
                     <td><?= h($equipo['nombre']) ?></td>
-                    <td><?= $equipo['unidades'] ?></td>
-                    <td><?= $equipo['disponibles'] ?></td>
+                    <td><?= (int) $equipo['unidades'] ?></td>
+                    <td><?= (int) $equipo['disponibles'] ?></td>
                 </tr>
             <?php endforeach; ?>
         </tbody>

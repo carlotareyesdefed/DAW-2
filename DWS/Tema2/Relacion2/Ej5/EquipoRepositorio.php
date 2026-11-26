@@ -65,11 +65,10 @@ class EquipoRepositorio
                 }
 
                 $sql = 'INSERT INTO prestamo(equipo_id, persona, devuelto)
-                    VALUES (?, ?, ?)';
-                $devuelto = 0;
-
+                    VALUES (?, ?, 0)';
+                
                 $sentencia = $this->pdo->prepare($sql);
-                $sentencia->execute([$equipoId, $persona, $devuelto]);
+                $sentencia->execute([$equipoId, $persona]);
                 return;
             }
         }
