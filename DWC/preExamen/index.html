@@ -16,9 +16,9 @@
         </a>
 
         <nav class="space-x-5">
-            <a href="">Funciones</a>
-            <a href="">Precios</a>
-            <a href="">Empezar</a>
+            <a class="hover:text-violet-600" href="">Funciones</a>
+            <a class="hover:text-violet-600" href="">Precios</a>
+            <a class="hover:text-violet-600" href="">Empezar</a>
             <a class="bg-purple-600 text-white p-3 rounded-3xl" href="">Prueba gratis</a>
         </nav>
 
@@ -29,18 +29,191 @@
     </header>
 
     <main>
-        <section class="flex gap-15 py-30 bg-linear-to-b from-indigo-100 to-white justify-center  dark:from-slate-800 dark:to-slate-950">
-            <div class="w-[35%]">
-                <h1 class="text-6xl font-bold">Tu equipo, por fin en la misma página</h1>
-                <p class="text-gray-600 text-lg mt-2 mb-8 w-110">Nimbo reúne tareas, fechas y responsables en tableros
-                    claros. Menos reuniones, más trabajo hecho.</p>
-                <a class="bg-purple-600 text-white px-4 py-3 rounded-xl mr-4 text-[15px]" href="">Empieza gratis</a>
-                <a class="border border-gray-400 px-4 py-3 rounded-xl font-medium text-[15px]" href="">Ver funciones</a>
-                <span class="block mt-5 text-[12px] text-gray-500">Sin trajeta de crédito. Cancela cuando
-                    quieras.</span>
-            </div>
+        <section class="bg-linear-to-b from-indigo-100 to-white dark:from-slate-800 dark:to-slate-950">
+            <div class="grid md:grid-cols-2 items-center w-[90%] mx-auto pt-25 gap-20">
+                <div>
+                    <h1 class="text-4xl md:text-7xl font-bold">Tu equipo, por fin en la misma página</h1>
+                    <p class="text-gray-600 text-base md:text-lg mt-6 mb-9 w-110">Nimbo reúne tareas, fechas y
+                        responsables en
+                        tableros
+                        claros. Menos reuniones, más trabajo hecho.</p>
+                    <a class="bg-purple-600 text-white px-4 py-3 rounded-xl mr-4 text-[15px]" href="">Empieza gratis</a>
+                    <a class="border border-gray-400 px-4 py-3 rounded-xl font-medium text-[15px]" href="">Ver
+                        funciones</a>
+                    <span class="block mt-5 text-[12px] text-gray-500">Sin trajeta de crédito. Cancela cuando
+                        quieras.</span>
+                </div>
 
-            <img class="w-[40%] rounded-xl border text-gray-200" src="assets-png/hero-modo-claro.png" alt="">
+                <img class=" rounded-xl border border-gray-200" src="assets-png/hero-modo-claro.png" alt="">
+            </div>
+        </section>
+
+        <section class="w-[90%] mx-auto py-25">
+            <h2 class="text-3xl md:text-4xl font-semibold">Todo lo que tu equipo necesita</h2>
+            <p class="text-gray-600 text-base md:text-lg mt-3 mb-9 w-130">Seis herramientas pensadas para que nadie
+                pregunte "¿quien se encarga de esto?"</p>
+            <div class="grid md:grid-cols-3 gap-6">
+                <article class="bg-[#f7f9fc] p-5 rounded-xl border border-gray-200">
+                    <img class="w-10 h-10 bg-violet-100 rounded-xl p-2 mb-3" src="assets-png/icono-tableros.png" alt="">
+                    <h4 class="text-lg font-semibold mb-2">Tableros</h4>
+                    <p class="text-gray-600"> Arrastra tareas entre «Por hacer», «En curso» y «Hecho».</p>
+                </article>
+                <article class="bg-[#f7f9fc] p-5 rounded-xl border border-gray-200">
+                    <img class="w-10 h-10 bg-violet-100 rounded-xl p-2 mb-3" src="assets-png/icono-tareas.png" alt="">
+                    <h4 class="text-lg font-semibold mb-2">Fechas límite</h4>
+                    <p class="text-gray-600"> Cada tarea tiene su fecha y se ordena sola en el calendario.</p>
+                </article>
+                <article class="bg-[#f7f9fc] p-5 rounded-xl border border-gray-200">
+                    <img class="w-10 h-10 bg-violet-100 rounded-xl p-2 mb-3" src="assets-png/icono-equipos.png" alt="">
+                    <h4 class="text-lg font-semibold mb-2">Equipos</h4>
+                    <p class="text-gray-600">Asigna responsables y comparte tableros con quien quieras.</p>
+                </article>
+                <article class="bg-[#f7f9fc] p-5 rounded-xl border border-gray-200">
+                    <img class="w-10 h-10 bg-violet-100 rounded-xl p-2 mb-3" src="assets-png/icono-avisos.png" alt="">
+                    <h4 class="text-lg font-semibold mb-2">Avisos</h4>
+                    <p class="text-gray-600">Recibe un aviso solo cuando algo te toca a ti.</p>
+                </article>
+                <article class="bg-[#f7f9fc] p-5 rounded-xl border border-gray-200">
+                    <img class="w-10 h-10 bg-violet-100 rounded-xl p-2 mb-3" src="assets-png/icono-automatizar.png"
+                        alt="">
+                    <h4 class="text-lg font-semibold mb-2">Automatizaciones</h4>
+                    <p class="text-gray-600">Mueve tareas y avisa al equipo sin hacer nada a mano.</p>
+                </article>
+                <article class="bg-[#f7f9fc] p-5 rounded-xl border border-gray-200">
+                    <img class="w-10 h-10 bg-violet-100 rounded-xl p-2 mb-3" src="assets-png/icono-informes.png" alt="">
+                    <h4 class="text-lg font-semibold mb-2">Informes</h4>
+                    <p class="text-gray-600">Mira cuánto se ha hecho esta semana y qué se retrasa.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="bg-[#f7f9fc] py-25">
+            <div class="w-[90%] mx-auto ">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-semibold"> Un plan para cada equipo </h2>
+                    <p class="text-gray-600 text-base md:text-lg mt-3"> Empieza gratis y cambia de plan cuando lo
+                        necesites.</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-6 items-center">
+                    <article class="bg-white p-10 border border-gray-200 rounded-2xl">
+                        <h4 class="text-xl md:text-lg font-semibold">Gratis</h4>
+                        <p><strong class="text-[38px]">0 €</strong></p>
+                        <p class="text-sm text-[#7889a3] dark:text-[#8593aa]">Para probar Nimbo</p>
+                        <ul class="grid gap-3 mt-[26px] mb-[30px] text-[#566580] dark:text-[#b6becd]">
+                            <li class="flex gap-3">
+                                <span class="font-bold text-violet-600 dark:text-violet-500">
+                                    ✓
+                                </span>
+                                3 tableros
+                            </li>
+                            <li class="flex gap-3">
+                                <span class="font-bold text-violet-600 dark:text-violet-500">
+                                    ✓
+                                </span>
+                                Hasta 5 personas
+                            </li>
+                            <li class="flex gap-3">
+                                <span class="font-bold text-violet-600 dark:text-violet-500">
+                                    ✓
+                                </span>
+                                Avisos por correo
+                            </li>
+                        </ul>
+                        <a class="block text-center py-3 px-2 border-2 border-violet-500 rounded-xl text-violet-600 dark:text-violet-300 font-semibold"
+                            href="">
+                            Elegir Gratis
+                        </a>
+                    </article>
+                    <article class="bg-purple-600 text-white px-10 py-15 rounded-2xl">
+                        <span
+                            class="inline-block rounded-full bg-yellow-300 text-zinc-900 text-xs font-bold py-1 px-3 mb-3.5">
+                            El más elegido
+                        </span>
+                        <h3 class="text-xl md:text-lg font-semibold">Equipo</h3>
+                        <p><strong class="text-[38px]">
+                                8 €
+                            </strong>
+                            <span class="text-base text-[#7889a3] dark:text-[#8593aa] !text-[#e1d5fc]">
+                                /persona al mes
+                            </span>
+                        </p>
+                        <p class="text-sm text-[#7889a3] dark:text-[#8593aa] !text-[#e1d5fc]">
+                            Para equipos que crecen
+                        </p>
+                        <ul class="grid gap-3 mt-[26px] mb-[30px] text-[#566580] dark:text-[#b6becd] !text-[#e1d5fc]">
+                            <li class="flex gap-3">
+                                <span class="font-bold text-yellow-300 dark:text-violet-500">
+                                    ✓
+                                </span>
+                                Tableros ilimitados
+                            </li>
+                            <li class="flex gap-3">
+                                <span class="font-bold text-yellow-300 dark:text-violet-500 ">
+                                    ✓
+                                </span>
+                                Automatizaciones
+                            </li>
+                            <li class="flex gap-3">
+                                <span class="font-bold text-yellow-300 dark:text-violet-500 ">
+                                    ✓
+                                </span>
+                                Informes semanales
+                            </li>
+                        </ul>
+                        <a class="block text-center py-3 px-2 rounded-xl text-violet-600 bg-white dark:text-violet-300 font-semibold"
+                            href="">
+                            Elegir Equipo
+                        </a>
+                    </article>
+                    <article class="bg-white p-10 border border-gray-200 rounded-2xl">
+                        <h4 class="text-xl md:text-lg font-semibold">Empresa</h4>
+                        <p><strong class="text-[38px]"> 20 €</strong>
+                            <span class="text-base text-[#7889a3]">
+                                /persona al mes
+                            </span>
+                        </p>
+                        <p class="text-sm text-[#7889a3] dark:text-[#8593aa]">Para organizaciones grandes</p>
+                        <ul class="grid gap-3 mt-[26px] mb-[30px] text-[#566580] dark:text-[#b6becd]">
+                            <li class="flex gap-3">
+                                <span class="font-bold text-violet-600 dark:text-violet-500">
+                                    ✓
+                                </span>
+                                Todo lo de Equipo
+                            </li>
+                            <li class="flex gap-3">
+                                <span class="font-bold text-violet-600 dark:text-violet-500">
+                                    ✓
+                                </span>
+                                Permisos avanzados
+                            </li>
+                            <li class="flex gap-3">
+                                <span class="font-bold text-violet-600 dark:text-violet-500">
+                                    ✓
+                                </span>
+                                Soporte prioritario
+                            </li>
+                        </ul>
+                        <a class="block text-center py-3 px-2 border-2 border-violet-500 rounded-xl text-violet-600 dark:text-violet-300 font-semibold"
+                            href="">
+                            Elegir Empresa
+                        </a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20">
+            <div class="bg-[#101729] rounded-3xl w-[60%] mx-auto text-center">
+                <div class="p-10">
+                    <h2 class="text-white text-3xl md:text-4xl font-semibold">Organiza tu primer tablero hoy</h2>
+                    <p class="text-gray-400 text-base md:text-lg mt-3 mb-6">Déjanos tu correo y te enviamos el acceso en
+                        un minuto</p>
+                    <form action="">
+                        <input class="bg-gray-700 text-gray-300 rounded-xl p-3 border border-gray-600 mr-2" type="email" id="correo" name="correo" placeholder="tu@empresa.com" required>
+                        <button class="rounded-xl bg-yellow-300 text-zinc-900 font-bold p-3" type="submit">Quiero acceso</button>
+                    </form>
+                </div>
+            </div>
         </section>
 
     </main>
