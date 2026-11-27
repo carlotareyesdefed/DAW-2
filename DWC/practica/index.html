@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biciclo - Taller de bicicletas urbanas</title>
+    <link rel="stylesheet" href="src/output.css">
+</head>
+
+<body class="font-sans">
+    <header
+        class="sticky top-0 z-50 bg-slate-900 text-gray-300 flex md:flex-row h-16 md:h-20 px-5 md:px-20 items-center">
+        <a class="w-24 md:w-30" href="">
+            <img src="assets/logo-claro.svg" alt="">
+        </a>
+
+        <nav class="ml-auto">
+            <div class="hidden md:block space-x-5">
+                <a class="hover:text-yellow-300" href="">Servicios</a>
+                <a class="hover:text-yellow-300" href="">Cómo funciona</a>
+                <a class="hover:bg-yellow-400 bg-yellow-300 text-black rounded-2xl py-2 px-4" href="">
+                    Pide cita
+                </a>
+            </div>
+
+            <button class="md:hidden text-2xl">
+                ☰
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <div class="grid md:grid-cols-2 items-center w-[90%] mx-auto pt-15 md:pt-25 gap-10">
+                <div>
+                    <span
+                        class="inline-block bg-blue-50 text-blue-700 text-sm font-medium rounded-full px-3 py-1 mb-4">Taller
+                        abierto de lunes a sábado</span>
+                    <h1 class="text-4xl md:text-6xl font-bold text-slate-900 mb-4 max-w-lg">Tu bici, a punto para la
+                        ciudad</h1>
+                    <p class="text-gray-600 text-base md:text-lg mt-6 mb-9 max-w-105">Reparamos, montamos y alquilamos
+                        biciletas urbanas. Te decimos el precio antes de tocar nada.</p>
+                    <div class="flex flex-col md:flex-row gap-3">
+                        <a class="bg-blue-700 hover:bg-blue-800 text-white px-4 py-3 rounded-xl text-[15px] text-center"
+                            href="">Pide cita
+                            en el
+                            taller</a>
+                        <a class="border-2 border-blue-700 hover:bg-blue-700 hover:text-white px-4 py-3 rounded-xl font-medium text-[15px] text-blue-700 text-center"
+                            href="">Ver
+                            servicios</a>
+                    </div>
+                </div>
+
+                <img class="w-full rounded-4xl" src="assets/hero-bici.svg" alt="">
+            </div>
+        </section>
+
+
+        <section class="w-[90%] mx-auto pt-15 md:pt-40 pb-10 md:pb-20">
+            <h2 class="text-3xl md:text-4xl font-semibold">Lo que hacemos en el taller</h2>
+            <p class="text-gray-600 text-base md:text-lg mt-3 mb-9">Desde un pinchazo hasta una bici montada a
+                tu medida.</p>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <article class="p-5 rounded-xl border border-gray-200">
+                    <img class="w-10 h-10 bg-blue-50 rounded-xl p-2 mb-3" src="assets/icono-reparacion.svg" alt="">
+                    <h4 class="text-lg font-semibold">Reparación rápida</h4>
+                    <p class="text-gray-600 my-2"> Pinchazos, frenos y cambios. La mayoria, en el mismo dia.</p>
+                    <p class="text-blue-700">Desde 8€</p>
+                </article>
+                <article class="p-5 rounded-xl border border-gray-200">
+                    <img class="w-10 h-10 bg-blue-50 rounded-xl p-2 mb-3" src="assets/icono-revision.svg" alt="">
+                    <h4 class="text-lg font-semibold">Revisión completa</h4>
+                    <p class="text-gray-600 my-2"> Veintidos puntos revisados, engrasados y ajustados.</p>
+                    <p class="text-blue-700">Desde 19€</p>
+                </article>
+                <article class="p-5 rounded-xl border border-gray-200">
+                    <img class="w-10 h-10 bg-blue-50 rounded-xl p-2 mb-3" src="assets/icono-medida.svg" alt="">
+                    <h4 class="text-lg font-semibold">Bici a medida</h4>
+                    <p class="text-gray-600 my-2">Eliges cuadro, msnillsr y sillín. Nosotros la montamos.</p>
+                    <p class="text-blue-700">Desde 390€</p>
+                </article>
+                <article class="p-5 rounded-xl border border-gray-200">
+                    <img class="w-10 h-10 bg-blue-50 rounded-xl p-2 mb-3" src="assets/icono-electrica.svg" alt="">
+                    <h4 class="text-lg font-semibold">Bicis eléctricas</h4>
+                    <p class="text-gray-600 my-2">Diagnóstico de batería y motor, y cambio de kits.</p>
+                    <p class="text-blue-700">Desde 35€</p>
+                </article>
+                <article class="p-5 rounded-xl border border-gray-200">
+                    <img class="w-10 h-10 bg-blue-50 rounded-xl p-2 mb-3" src="assets/icono-accesorios.svg" alt="">
+                    <h4 class="text-lg font-semibold">Accesorios y seguridad</h4>
+                    <p class="text-gray-600 my-2">Candados, luces, cascos y alforjas con montaje gratis.</p>
+                    <p class="text-blue-700">Desde 12€</p>
+                </article>
+                <article class="p-5 rounded-xl border border-gray-200">
+                    <img class="w-10 h-10 bg-blue-50 rounded-xl p-2 mb-3" src="assets/icono-alquiler.svg" alt="">
+                    <h4 class="text-lg font-semibold">Alquiler por días</h4>
+                    <p class="text-gray-600 my-2">Bicis urbanas y plegables para turistas y visitas.</p>
+                    <p class="text-blue-700">Desde 9€/día</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="bg-slate-900 text-white">
+            <div class="w-[90%] mx-auto py-12 md:pt-20 md:pb-15">
+                <h2 class="text-3xl md:text-4xl font-semibold mb-10">Así de fácil</h2>
+
+                <div class="grid md:grid-cols-3 gap-10">
+                    <article class="flex flex-row md:flex-col items-start gap-4">
+                        <span
+                            class="bg-yellow-300 text-black font-bold rounded-full w-10 h-10 flex items-center justify-center shrink-0">
+                            1
+                        </span>
+
+                        <div>
+                            <h3 class="mb-2 text-lg font-semibold">Pides cita</h3>
+                            <p class="text-[15px] text-gray-400 max-w-80">Rellena el formulario o llámanos. Te damos
+                                hueco en 24 horas.</p>
+                        </div>
+                    </article>
+
+                    <article class="flex flex-row md:flex-col items-start gap-4">
+                        <span
+                            class="bg-yellow-300 text-black font-bold rounded-full w-10 h-10 flex items-center justify-center shrink-0">
+                            2
+                        </span>
+
+                        <div>
+                            <h3 class="mb-2 text-lg font-semibold">Te damos presupuesto</h3>
+                            <p class="text-[15px] text-gray-400 max-w-80">
+                                Revisamos la bici delante de ti y aprobamos el precio juntos.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="flex flex-row md:flex-col items-start gap-4">
+                        <span
+                            class="bg-yellow-300 text-black font-bold rounded-full w-10 h-10 flex items-center justify-center shrink-0">
+                            3
+                        </span>
+
+                        <div>
+                            <h3 class="mb-2 text-lg font-semibold">Recoges y pedaleas</h3>
+                            <p class="text-[15px] text-gray-400 max-w-80">
+                                Te avisamos por mensaje cuando esté lista. Garantía de 6 meses.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="w-[90%] mx-auto py-12 md:py-25">
+            <div class="grid md:grid-cols-2 items-start justify-items-center gap-8">
+                <img class="w-full rounded-4xl" src="assets/taller.svg" alt="Herramientas del taller de bicicletas">
+
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-semibold  max-w-120">Mecánicos que te explican qué falla</h2>
+                    <p class="text-gray-600 text-base md:text-lg mt-3 mb-5 max-w-120">Cada reparación acaba con una nota
+                        sencilla: qué encontramos, qué cambiamos y cuándo toca la
+                        próxima revisión.</p>
+
+                    <ul class="space-y-3">
+                        <li class="flex items-center gap-3">
+                            <img class="w-6 h-6" src="assets/icono-check.svg" alt="">
+                            <p>Presupuesto cerrado antes de empezar</p>
+                        </li>
+
+                        <li class="flex items-center gap-3">
+                            <img class="w-6 h-6" src="assets/icono-check.svg" alt="">
+                            <p>Recambios originales y garantía de 6 meses</p>
+                        </li>
+
+                        <li class="flex items-center gap-3">
+                            <img class="w-6 h-6" src="assets/icono-check.svg" alt="">
+                            <p>Bici de cortesía mientras esperas</p>
+                        </li>
+                    </ul>
+
+                    <a class="inline-block bg-blue-700 hover:bg-blue-800 text-white font-semibold px-5 py-3 rounded-xl mt-6"
+                        href="">
+                        Reserva tu revisión
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-blue-700 text-white py-12 md:py-16">
+            <div class="w-[90%] mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+
+                <div class="text-center md:text-left">
+                    <h2 class="text-2xl md:text-3xl font-bold">
+                        Primera revisión con 10 % de descuento
+                    </h2>
+
+                    <p class="text-blue-100 text-sm md:text-base mt-2">
+                        Válido hasta fin de mes para clientes nuevos.
+                    </p>
+                </div>
+
+                <a class="bg-yellow-300 hover:bg-yellow-400 text-slate-900 font-semibold px-7 py-3 rounded-xl text-center shrink-0 "
+                    href="">
+                    Quiero mi descuento
+                </a>
+            </div>
+        </section>
+
+        <section class="w-[90%] mx-auto py-15 md:py-20">
+
+            <div class="grid md:grid-cols-2 gap-10">
+
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-semibold">
+                        Pide cita
+                    </h2>
+
+                    <p class="text-gray-600 text-base md:text-lg mt-3 mb-8 max-w-110">
+                        Cuéntanos qué le pasa a tu bici y te respondemos en menos de 24 horas.
+                    </p>
+
+                    <div class="mb-5">
+                        <p class="text-gray-500 text-sm">Dirección</p>
+                        <p class="font-semibold">Calle del Carril, 12 - Madrid</p>
+                    </div>
+
+                    <div class="mb-5">
+                        <p class="text-gray-500 text-sm">Horario</p>
+                        <p class="font-semibold">Lunes a sábado, de 9:30 a 19:30</p>
+                    </div>
+
+                    <div>
+                        <p class="text-gray-500 text-sm">Teléfono</p>
+                        <p class="font-semibold">910 555 012</p>
+                    </div>
+                </div>
+
+
+                <form class="bg-slate-50 border border-gray-200 rounded-2xl p-5 md:p-8 flex flex-col gap-5" action=""
+                    method="post">
+
+                    <div>
+                        <label class="block text-sm font-semibold mb-2" for="nombre">
+                            Nombre
+                        </label>
+
+                        <input class="w-full bg-white border border-gray-300 rounded-lg p-3" type="text" id="nombre"
+                            name="nombre" placeholder="Tu nombre" required>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-semibold mb-2" for="correo">
+                            Correo electrónico
+                        </label>
+
+                        <input class="w-full bg-white border border-gray-300 rounded-lg p-3" type="email" id="correo"
+                            name="correo" placeholder="tu@correo.com" required>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-semibold mb-2" for="servicio">
+                            Servicio
+                        </label>
+
+                        <select class="w-full bg-white border border-gray-300 rounded-lg p-3" id="servicio"
+                            name="servicio" required>
+
+                            <option value="reparacion">Reparación rápida</option>
+                            <option value="revision">Revisión completa</option>
+                            <option value="medida">Bici a medida</option>
+                            <option value="electrica">Bicis eléctricas</option>
+                            <option value="accesorios">Accesorios y seguridad</option>
+                            <option value="alquiler">Alquiler por días</option>
+
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-semibold mb-2" for="mensaje">
+                            Mensaje
+                        </label>
+
+                        <textarea class="w-full bg-white border border-gray-300 rounded-lg p-3" id="mensaje"
+                            name="mensaje" rows="4" placeholder="¿Qué le pasa a tu bici?"></textarea>
+                    </div>
+
+                    <div class="flex items-center gap-3">
+                        <input type="checkbox" id="privacidad" name="privacidad" required>
+
+                        <label class="text-sm text-gray-600" for="privacidad">
+                            Acepto que Biciclo use mis datos para responderme.
+                        </label>
+                    </div>
+
+                    <button class="w-full bg-blue-700 hover:bg-blue-800 text-white font-semibold rounded-xl py-3"
+                        type="submit">
+                        Enviar solicitud
+                    </button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-slate-900 text-white">
+
+        <div class="w-[90%] mx-auto grid md:grid-cols-4 gap-8 py-15">
+
+            <div>
+                <a href="">
+                    <img class="w-30" src="assets/logo-claro.svg" alt="Biciclo">
+                </a>
+
+                <p class="text-sm text-gray-400 mt-3 max-w-60">
+                    Taller y tienda de bicicletas urbanas en Madrid.
+                </p>
+            </div>
+
+            <div>
+                <h4 class="font-semibold mb-3">Servicios</h4>
+
+                <ul class="text-sm text-gray-400 space-y-2">
+                    <li><a class="hover:text-yellow-300" href="">Reparación</a></li>
+                    <li><a class="hover:text-yellow-300" href="">Revisión</a></li>
+                    <li><a class="hover:text-yellow-300" href="">Alquiler</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="font-semibold mb-3">Empresa</h4>
+
+                <ul class="text-sm text-gray-400 space-y-2">
+                    <li><a class="hover:text-yellow-300" href="">Cómo funciona</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="font-semibold mb-3">Síguenos</h4>
+
+                <ul class="text-sm text-gray-400 space-y-2">
+                    <li><a class="hover:text-yellow-300" href="">Instagram</a></li>
+                    <li><a class="hover:text-yellow-300" href="">YouTube</a></li>
+                    <li><a class="hover:text-yellow-300" href="">WhatsApp</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <p class="border-t border-slate-800 text-center text-xs text-gray-400 py-6">
+            © 2026 Biciclo · Calle del Carril, 12
+        </p>
+
+    </footer>
+</body>
+
+</html>
