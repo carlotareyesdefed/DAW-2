@@ -13,9 +13,17 @@ try {
     $repo = new EquipoRepositorio(conectar());
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $accion = (string) ($_POST['accion'] ?? '');
+        $id = filter_var(
+            $_POST['id'] ?? null,
+            FILTER_VALIDATE_INT,
+            ['options' => ['min_range' => 1]]
+        );
 
         if ($accion === 'crear') {
-            $repo->crear((string) ($_POST['nombre'] ?? ''), ($_POST['unidades'] ?? null));
+            $repo->crear((string) ($_POST['nombre'] ?? ''), (int) ($_POST['unidades'] ?? null));
+
+        } else if ($accion === 'cambiar') {
+            $repo->actualizarUnidades($id, (int) ($_POST['unidades'] ?? null));
         }
         header('Location: index.php');
         exit;
@@ -67,5 +75,19 @@ try {
         <input name="nombre" placeholder="Nombre" minlength="2" maxlength="80" required>
         <input type="number" name="unidades" min="0" required>
         <button type="submit">Añadir</button>
+    </form>
+    <br>
+    <h2>Cambiar unidades</h2>
+    <form action="index.php" method="post" style="display:inline">
+        <input type="hidden" name="accion" value="cambiar">
+        <label for="equipo">Equipo:</label>
+        <select id="equipo" name="id" required>
+            <option value="" disabled selected>Elige una opción</option>
+            <?php foreach ($equipos as $equipo): ?>
+                <option value="<?= $equipo['id'] ?>"><?= h($equipo['nombre']) ?></option>
+            <?php endforeach; ?>
+        </select>
+        <input type="number" name="unidades" min="0" required>
+        <button type="submit">Cambiar</button>
     </form>
 </body>

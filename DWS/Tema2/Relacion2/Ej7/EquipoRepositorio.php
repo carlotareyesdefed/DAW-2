@@ -32,7 +32,7 @@ class EquipoRepositorio
 
     public function actualizarUnidades(int $id, int $unidades): void
     {
-        if ($id < 1 || !filter_var($unidades, FILTER_VALIDATE_INT)) {
+        if ($id < 1 || !filter_var($unidades, FILTER_VALIDATE_INT, ['options' => ['min_range' => 0]])) {
             throw new InvalidArgumentException('Id o unidades inválidas.');
         }
         $sentencia = $this->pdo->prepare('UPDATE equipo SET unidades = ? WHERE id = ?');
