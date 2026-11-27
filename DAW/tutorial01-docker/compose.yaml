@@ -1,0 +1,30 @@
+services:
+  web:
+    build: .
+    ports:
+      - "127.0.0.1:8080:80"
+    volumes:
+      - ./app:/var/www/html
+    depends_on:
+      db:
+        condition: service_healthy
+
+  db:
+    image: mysql:8.4
+    environment:
+      MYSQL_ROOT_PASSWORD: root123
+      MYSQL_DATABASE: catalogo
+      MYSQL_USER: alumno
+      MYSQL_PASSWORD: alumno123
+    volumes:
+      - datos_mysql:/var/lib/mysql
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "127.0.0.1"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+      start_period: 30s
+
+volumes:
+  datos_mysql:
